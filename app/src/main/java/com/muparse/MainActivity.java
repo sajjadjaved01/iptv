@@ -1,40 +1,27 @@
 package com.muparse;
 
 import android.Manifest;
-import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.media.MediaPlayer;
-import android.net.Uri;
 import android.os.Build;
+import android.os.Bundle;
 import android.os.Environment;
 import android.support.annotation.RequiresApi;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.MediaController;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.VideoView;
 
 import java.io.File;
-import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.List;
-
-import static android.provider.AlarmClock.EXTRA_MESSAGE;
 
 public class MainActivity extends AppCompatActivity{
 
     private static final File DEFA = Environment.getExternalStorageDirectory();
-    private File dir = new File(DEFA.getAbsolutePath()+"/Netuptv");
     TextView mPlaylistParams;
     RecyclerView mPlaylistList;
+    private File dir = new File(DEFA.getAbsolutePath()+"/Netuptv");
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
@@ -73,6 +60,17 @@ public class MainActivity extends AppCompatActivity{
 //        intent.setPackage( "com.mxtech.videoplayer.ad" );
 //        startActivity( intent );
 //    }
+
+    public boolean isAppInstalled(String uri) {
+        PackageManager pm = getPackageManager();
+        try {
+            pm.getPackageInfo(uri, PackageManager.GET_ACTIVITIES);
+            return true;
+        } catch (PackageManager.NameNotFoundException e) {
+            Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
+        return false;
+    }
 
     @SuppressWarnings("All")
     public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
