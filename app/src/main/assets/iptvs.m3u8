@@ -1,0 +1,201 @@
+#EXTM3U deinterlace=1 m3uautoload=1 cache=1000
+#PLAYLIST:Shtorm TV
+
+#EXTINF:-1,UA: Перший
+http://sample_url.com/air/002/index.m3u8
+#EXTINF:-1,1+1
+http://sample_url.com/air/003/index.m3u8
+#EXTINF:-1,Інтер
+http://sample_url.com/air/004/index.m3u8
+#EXTINF:-1 tvg-logo="http://sample_url.com/static/logo/005.png", Кіровоград
+http://sample_url.com/air/005/index.m3u8
+#EXTINF:-1,2+2
+http://sample_url.com/air/006/index.m3u8
+#EXTINF:-1,TTV
+http://sample_url.com/air/007/index.m3u8
+#EXTINF:-1,ТЕТ
+http://sample_url.com/air/008/index.m3u8
+#EXTINF:-1,ICTV
+http://sample_url.com/air/009/index.m3u8
+#EXTINF:-1,СТБ
+http://sample_url.com/air/010/index.m3u8
+#EXTINF:-1,Новий канал
+http://sample_url.com/air/011/index.m3u8
+#EXTINF:-1,Україна
+http://sample_url.com/air/012/index.m3u8
+#EXTINF:-1,Мега
+http://sample_url.com/air/013/index.m3u8
+#EXTINF:-1 tvg-logo="http://sample_url.com/static/logo/015.png", 5-й Канал
+http://sample_url.com/air/015/index.m3u8
+#EXTINF:-1,Тоніс
+http://sample_url.com/air/016/index.m3u8
+#EXTINF:-1,К-1
+http://sample_url.com/air/017/index.m3u8
+#EXTINF:-1,К-2
+http://sample_url.com/air/018/index.m3u8
+#EXTINF:-1,Ескулап ТБ
+http://sample_url.com/air/019/index.m3u8
+#EXTINF:-1,Enter-фільм
+http://sample_url.com/air/022/index.m3u8
+#EXTINF:-1,ZOOM
+http://sample_url.com/air/023/index.m3u8
+#EXTINF:-1,ЧТРК
+http://sample_url.com/air/024/index.m3u8
+#EXTINF:-1,ATR
+http://sample_url.com/air/025/index.m3u8
+#EXTINF:-1,Вінтаж
+http://sample_url.com/air/026/index.m3u8
+#EXTINF:-1,Индиго
+http://sample_url.com/air/028/index.m3u8
+#EXTINF:-1,НЛО ТБ
+http://sample_url.com/air/030/index.m3u8
+#EXTINF:-1,НТН
+http://sample_url.com/air/033/index.m3u8
+#EXTINF:-1,Дача
+http://sample_url.com/air/036/index.m3u8
+#EXTINF:-1,ZIK
+http://sample_url.com/air/043/index.m3u8
+#EXTINF:-1,QTV
+http://sample_url.com/air/047/index.m3u8
+#EXTINF:-1,Макси-ТВ
+http://sample_url.com/air/048/index.m3u8
+#EXTINF:-1,Сонце
+http://sample_url.com/air/050/index.m3u8
+#EXTINF:-1,Квартал ТВ
+http://sample_url.com/air/055/index.m3u8
+#EXTINF:-1,ПравдаТУТ
+http://sample_url.com/air/031/index.m3u8
+#EXTINF:-1,Shopping TV
+http://sample_url.com/air/014/index.m3u8
+
+#EXTINF:-1,Бигуди
+http://sample_url.com/air/020/index.m3u8
+#EXTINF:-1 tvg-logo="http://sample_url.com/static/logo/051.png", HD Fashion
+http://sample_url.com/air/051/index.m3u8
+#EXTINF:-1,English club
+http://sample_url.com/air/054/index.m3u8
+
+#EXTINF:-1,РАДА
+http://sample_url.com/air/037/index.m3u8
+#EXTINF:-1,ЕСПРЕСО TV
+http://sample_url.com/air/027/index.m3u8
+#EXTINF:-1,BUSINESS
+http://sample_url.com/air/029/index.m3u8
+#EXTINF:-1 tvg-logo="http://sample_url.com/static/logo/032.png", 112 UA HD
+http://sample_url.com/air/032/index.m3u8
+#EXTINF:-1,News One 
+http://sample_url.com/air/034/index.m3u8
+#EXTINF:-1,24 News
+http://sample_url.com/air/035/index.m3u8
+#EXTINF:-1 tvg-logo="http://sample_url.com/static/logo/038.png", 3S.ТV
+http://sample_url.com/air/038/index.m3u8
+#EXTINF:-1,1-й деловой
+http://sample_url.com/air/039/index.m3u8
+#EXTINF:-1,Дождь
+http://sample_url.com/air/094/index.m3u8
+#EXTINF:-1,Euronews
+http://sample_url.com/air/060/index.m3u8
+
+#EXTINF:-1,FOX
+http://sample_url.com/air/074/index.m3u8
+#EXTINF:-1,FOX Life
+http://sample_url.com/air/075/index.m3u8
+#EXTINF:-1,TV 1000 COMEDY
+http://sample_url.com/air/059/index.m3u8
+#EXTINF:-1,TV 1000 EAST
+http://sample_url.com/air/081/index.m3u8
+#EXTINF:-1,TV 1000 русское кино
+http://sample_url.com/air/082/index.m3u8
+#EXTINF:-1,TV 1000 ACTION
+http://sample_url.com/air/092/index.m3u8
+#EXTINF:-1,FilmBox Arthouse
+http://sample_url.com/air/064/index.m3u8
+#EXTINF:-1,FilmBox
+http://sample_url.com/air/095/index.m3u8
+#EXTINF:-1,ЕВРОКИНО
+http://sample_url.com/air/089/index.m3u8
+#EXTINF:-1,TVXXI
+http://sample_url.com/air/078/index.m3u8
+#EXTINF:-1,FilmUADrama
+http://sample_url.com/air/073/index.m3u8
+
+#EXTINF:-1,Пиксель
+http://sample_url.com/air/021/index.m3u8
+#EXTINF:-1,Малятко ТВ
+http://sample_url.com/air/040/index.m3u8
+#EXTINF:-1,Плюс-плюс
+http://sample_url.com/air/042/index.m3u8
+#EXTINF:-1,Multimania
+http://sample_url.com/air/066/index.m3u8
+#EXTINF:-1,Cartoon network
+http://sample_url.com/air/068/index.m3u8
+#EXTINF:-1,BOLT
+http://sample_url.com/air/087/index.m3u8
+#EXTINF:-1,Детский Мир
+http://sample_url.com/air/088/index.m3u8
+
+#EXTINF:-1,DaVinci Learning
+http://sample_url.com/air/053/index.m3u8
+#EXTINF:-1,National Geographic
+http://sample_url.com/air/057/index.m3u8
+#EXTINF:-1,DocuBox HD
+http://sample_url.com/air/058/index.m3u8
+#EXTINF:-1 tvg-logo="http://sample_url.com/static/logo/062.png", EPOQUE
+http://sample_url.com/air/062/index.m3u8
+#EXTINF:-1,Зоопарк
+http://sample_url.com/air/067/index.m3u8
+#EXTINF:-1,Discovery
+http://sample_url.com/air/069/index.m3u8
+#EXTINF:-1,Animal Planet
+http://sample_url.com/air/070/index.m3u8
+#EXTINF:-1,TLC
+http://sample_url.com/air/072/index.m3u8
+#EXTINF:-1,Терра
+http://sample_url.com/air/065/index.m3u8
+#EXTINF:-1,ФАУНА
+http://sample_url.com/air/076/index.m3u8
+#EXTINF:-1 tvg-logo="http://sample_url.com/static/logo/063.png", НAУКА
+http://sample_url.com/air/063/index.m3u8
+#EXTINF:-1,Travel + Adventure
+http://sample_url.com/air/083/index.m3u8
+#EXTINF:-1,Viasat History
+http://sample_url.com/air/079/index.m3u8
+#EXTINF:-1,Viasat Nature
+http://sample_url.com/air/080/index.m3u8
+#EXTINF:-1,Viasat Explore
+http://sample_url.com/air/090/index.m3u8
+
+#EXTINF:-1,Первый автомобильный
+http://sample_url.com/air/049/index.m3u8
+#EXTINF:-1,Трофей
+http://sample_url.com/air/084/index.m3u8
+#EXTINF:-1,Охотник и рыболов
+http://sample_url.com/air/077/index.m3u8
+
+#EXTINF:-1,М1
+http://sample_url.com/air/001/index.m3u8
+#EXTINF:-1,M2
+http://sample_url.com/air/044/index.m3u8
+#EXTINF:-1,O-TV
+http://sample_url.com/air/045/index.m3u8
+#EXTINF:-1,EU Music HD
+http://sample_url.com/air/046/index.m3u8
+#EXTINF:-1,360 Tune Box
+http://sample_url.com/air/052/index.m3u8
+
+#EXTINF:-1,XSPORT
+http://sample_url.com/air/041/index.m3u8
+#EXTINF:-1,FAST&FUN Box HD
+http://sample_url.com/air/056/index.m3u8
+#EXTINF:-1,FightBox HD
+http://sample_url.com/air/061/index.m3u8
+#EXTINF:-1,EUROSPORT
+http://sample_url.com/air/085/index.m3u8
+#EXTINF:-1,EUROSPORT 2
+http://sample_url.com/air/086/index.m3u8
+#EXTINF:-1,Футбол1
+http://sample_url.com/air/091/index.m3u8
+#EXTINF:-1,Футбол2
+http://sample_url.com/air/093/index.m3u8
+
+
