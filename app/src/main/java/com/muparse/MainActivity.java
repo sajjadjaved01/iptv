@@ -60,16 +60,17 @@ public class MainActivity extends AppCompatActivity{
 //        intent.setPackage( "com.mxtech.videoplayer.ad" );
 //        startActivity( intent );
 //    }
-
+boolean installed = false;
     public boolean isAppInstalled(String uri) {
         PackageManager pm = getPackageManager();
         try {
             pm.getPackageInfo(uri, PackageManager.GET_ACTIVITIES);
-            return true;
+            installed = true;
         } catch (PackageManager.NameNotFoundException e) {
             Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+            installed = false;
         }
-        return false;
+        return installed;
     }
 
     @SuppressWarnings("All")
@@ -78,7 +79,6 @@ public class MainActivity extends AppCompatActivity{
             case 1: {
                 // If request is cancelled, the result arrays are empty.
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    // permission was granted, yay! Do the
                     if (!dir.exists()){
                         dir.mkdir();
                     }
@@ -86,13 +86,11 @@ public class MainActivity extends AppCompatActivity{
 //                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://portal.onlineiptv.net:5210/get.php?username=000&password=000&type=m3u&output=ts"));
 //                    startActivity(browserIntent);
                 } else {
-                    // permission denied, boo! Disable the
                     Toast.makeText(this, "Permission denied ☻", Toast.LENGTH_SHORT).show();
                 }
                 return;
             }
-            // other 'case' lines to check for other
-            // permissions this app might request
+            // other 'case' lines to check for other permissions this app might request
         }
     }
 }

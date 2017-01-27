@@ -63,7 +63,7 @@ public class M3UParser {
                     playlistItem.setItemIcon("");
                 }
                 String name = dataArray[1].substring(0, dataArray[1].indexOf(EXT_URL)).replace("\n", "");
-                String url = dataArray[1].substring(dataArray[1].indexOf(EXT_URL)).replace("\n", "");
+                String url = dataArray[1].substring(dataArray[1].indexOf(EXT_URL)).replace("\n", "").replace("\r", "");
                 playlistItem.setItemName(name);
                 playlistItem.setItemUrl(url);
                 playlistItems.add(playlistItem);

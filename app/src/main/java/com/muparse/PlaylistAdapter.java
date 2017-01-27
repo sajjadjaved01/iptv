@@ -24,8 +24,8 @@ public class PlaylistAdapter extends RecyclerView.Adapter<PlaylistAdapter.ItemHo
     private List<M3UItem> mItem = new ArrayList<M3UItem>();
     private Context mContext;
     private LayoutInflater mInflater;
-    private MainActivity mainActivity= new MainActivity();
     private Intent intent = new Intent();
+    private MainActivity min = new MainActivity();
 
     public PlaylistAdapter(Context c) {
         mContext = c;
@@ -78,16 +78,17 @@ public class PlaylistAdapter extends RecyclerView.Adapter<PlaylistAdapter.ItemHo
             url.setText(item.getItemUrl());
         }
 
+        boolean isApp = min.isAppInstalled("com.mxtech.videoplayer");
         public void onClick(View v){
             int position = getLayoutPosition();
             final M3UItem imm = mItem.get(position);
-            if ( mainActivity.isAppInstalled("com.mxtech.videoplayer.ad")){
-                Toast.makeText(mainActivity, "ApplicationInstalled", Toast.LENGTH_SHORT).show();
+            if (isApp) {
+                Toast.makeText(mContext, "ApplicationInstalled", Toast.LENGTH_SHORT).show();
             }else {
-                Toast.makeText(mainActivity, "App Not Found", Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext, "App Not Found", Toast.LENGTH_SHORT).show();
             }
 //            Toast.makeText(mContext, "Url: "+imm.getItemUrl(), Toast.LENGTH_LONG).show();
-//            playy(imm.getItemUrl());
+            playy(imm.getItemUrl());
         }
 
         public void playy(String uriil){
