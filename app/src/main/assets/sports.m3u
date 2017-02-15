@@ -1,0 +1,17 @@
+#EXTM3U
+#EXTINF:-1,AR: BEIN MAX 1HD
+http://portal.onlineiptv.net:5210/live/X6QXN76met/Jyw2SMYjxe/9589.ts
+#EXTINF:-1,ES: #0 HD
+http://portal.onlineiptv.net:5210/live/X6QXN76met/Jyw2SMYjxe/8812.ts
+#EXTINF:-1,BEIN 1HD
+http://video-ams3-1.xx.fbcdn.net/hvideo-lla2/v/live-md/375881109456804.m3u8?_nc_rl=AfBCyIh9wNDhsJkI&oh=1252714bef36b89baead9b42b07673de&oe=587CF2B8
+#EXTINF:-1,Eurosport 2
+http://www.satorbita.com/iptv/free/free2_rostelecom-1.php?v=aHR0cDovLzkyLjEyNy4yNDkuMjMzOjEyMzQvdWRwLzIzMy43LjcwLjc3OjUwMDA=
+#EXTINF:-1,Viasat Sport
+http://www.satorbita.com/iptv/free/free2_rostelecom-1.php?v=aHR0cDovLzkyLjEyNy4yNDkuMjMzOjEyMzQvdWRwLzIzMy43LjcwLjc4OjUwMDA=
+#EXTINF:-1,КХЛ
+http://www.satorbita.com/iptv/free/free2_rostelecom-1.php?v=aHR0cDovLzkyLjEyNy4yNDkuMjMzOjEyMzQvdWRwLzIzMy43LjcwLjY4OjUwMDA=
+#EXTINF:-1,Матч ТВ
+http://www.satorbita.com/iptv/free/free2_rostelecom-1.php?v=aHR0cDovLzkyLjEyNy4yNDkuMjMzOjEyMzQvdWRwLzIyNS41NC4yMjMuMjE6NTAwMA==
+#EXTINF:-1,Матч! Арена
+http://www.satorbita.com/iptv/free/free2_rostelecom-1.php?v=aHR0cDovLzkyLjEyNy4yNDkuMjMzOjEyMzQvdWRwLzIzMy43LjcwLjY5OjUwMDA=
