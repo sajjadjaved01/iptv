@@ -1,0 +1,6 @@
+<application>
+  <component name="RefactoringSettings">
+    <option name="RENAME_SEARCH_FOR_TEXT_FOR_CLASS" value="false" />
+    <option name="MOVE_PREVIEW_USAGES" value="false" />
+  </component>
+</application>
