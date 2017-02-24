@@ -5,9 +5,15 @@ package com.muparse;
  */
 
 
+import android.content.ActivityNotFoundException;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,7 +30,6 @@ public class PlaylistAdapter extends RecyclerView.Adapter<PlaylistAdapter.ItemHo
     private List<M3UItem> mItem = new ArrayList<M3UItem>();
     private Context mContext;
     private LayoutInflater mInflater;
-    private Intent intent = new Intent();
     private MainActivity min = new MainActivity();
 
     public PlaylistAdapter(Context c) {
@@ -64,47 +69,71 @@ public class PlaylistAdapter extends RecyclerView.Adapter<PlaylistAdapter.ItemHo
     public class ItemHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         TextView name;
-        TextView url;
+        //TextView url;
 
         public ItemHolder(View view) {
             super(view);
             view.setOnClickListener(this);
             name = (TextView) view.findViewById(R.id.item_name);
-            url = (TextView) view.findViewById(R.id.item_url);
+            //url = (TextView) view.findViewById(R.id.item_url);
         }
 
         public void update(final M3UItem item) {
             name.setText(item.getItemName());
-            url.setText(item.getItemUrl());
+            // url.setText(item.getItemUrl());
         }
 
-        boolean isApp = min.isAppInstalled("com.mxtech.videoplayer");
+        PackageManager pm = mContext.getPackageManager();
+
+        boolean isApp = min.isPackageInstalled("com.mxtech.videoplayer.ad", pm);
+
         public void onClick(View v){
-            int position = getLayoutPosition();
-            final M3UItem imm = mItem.get(position);
-            if (isApp) {
-                Toast.makeText(mContext, "ApplicationInstalled", Toast.LENGTH_SHORT).show();
-            }else {
-                Toast.makeText(mContext, "App Not Found", Toast.LENGTH_SHORT).show();
+            try {
+                int position = getLayoutPosition();
+                final M3UItem imm = mItem.get(position);
+                if (isApp) { //isApplicationInstalled
+                    playy(imm.getItemUrl(), imm.getItemName());
+                } else { // isApplicationNotFound
+                    playerNotFound();
+                }
+            } catch (Exception e) {
+                Toast.makeText(mContext, "Error: " + e.getMessage(), Toast.LENGTH_LONG).show();
             }
-//            Toast.makeText(mContext, "Url: "+imm.getItemUrl(), Toast.LENGTH_LONG).show();
-            playy(imm.getItemUrl());
         }
 
-        public void playy(String uriil){
+        void playy(String urli, String channel) {
             try{
-                Uri videoUri = Uri.parse(uriil); //http://portal.onlineiptv.net:5210/live/000/000/8517.ts
-                intent = new Intent(Intent.ACTION_VIEW);
+                Uri videoUri = Uri.parse(urli);
+                Intent intent = new Intent(Intent.ACTION_VIEW);
                 intent.setDataAndType(videoUri, "application/x-mpegURL" );
-//                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 intent.setPackage( "com.mxtech.videoplayer.ad" );
-                mContext.startActivity( intent );
-
+                intent.putExtra("title", channel);
+                mContext.startActivity(intent);
             } catch (Exception e) {
                 Toast.makeText(mContext, "Error: "+e.getMessage(), Toast.LENGTH_LONG).show();
             }
-//            Intent marketIntent = new Intent(Intent.ACTION_VIEW, marketUri);
-//            mContext.startActivity(marketIntent);
+        }
+
+        void playerNotFound() {
+            AlertDialog.Builder localBuilder = new AlertDialog.Builder(mContext);
+            localBuilder.setTitle("iPtv");
+            localBuilder.setMessage("Player not found. Install MX Player.");
+            localBuilder.setPositiveButton("Install", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface paramAnonymousDialogInterface, int paramAnonymousInt) {
+                    try {
+                        mContext.startActivity(new Intent("android.intent.action.VIEW", Uri.parse("market://details?id=com.mxtech.videoplayer.ad")));
+                    } catch (ActivityNotFoundException localActivityNotFoundException) {
+                        mContext.startActivity(new Intent("android.intent.action.VIEW", Uri.parse("https://play.google.com/store/apps/details?id=com.mxtech.videoplayer.ad&hl=en")));
+                    }
+                }
+            });
+//        localBuilder.setNegativeButton("Google", new DialogInterface.OnClickListener()
+//        {
+//            public void onClick(DialogInterface paramAnonymousDialogInterface, int paramAnonymousInt) {}
+//        });
+            //localBuilder.setCancelable(false);
+            localBuilder.create().show();
         }
     }
 }

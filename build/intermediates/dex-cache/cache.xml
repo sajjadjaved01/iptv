@@ -2,166 +2,193 @@
 <items version="2" >
 
     <item
-        is-multidex="false"
-        jar="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.0.1\jars\classes.jar"
+        is-multidex="true"
+        jar="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\exploded-aar\com.google.firebase\firebase-common\10.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="bc7e99e8d0fc279a05aa91378530f467ad62d443">
-        <dex dex="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-25.0.1_7539fb5e297ce142dd1212f813de072f62530086.jar" />
+        sha1="eb0d830e3eabb9deb9ec44869cf7ac7ea1ad794c">
+        <dex dex="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-common-10.0.1_c2c09c980c0c1d4ef1b32195a8ad9a123c3da199\classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        is-multidex="true"
+        jar="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\exploded-aar\com.android.support\design\25.2.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="cb2bef8a8b5e83ed0b13adceba2503a1af7e36ed">
-        <dex dex="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\pre-dexed\debug\instant-run-bootstrap_cc4825e22b313d828344bccd4b96e5d0e5adda13.jar" />
+        sha1="ea6a989b83d19b1b461281e0475a6cd6514897f8">
+        <dex dex="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-25.2.0_4b9e9016bb4d8e5f33bb0f5f3270d38f3541f7e2\classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.0.1\jars\libs\internal_impl-25.0.1.jar"
+        is-multidex="true"
+        jar="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.2.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="c5b7145fb34779b6639147b8f2f8dd77c0db771b">
-        <dex dex="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\pre-dexed\debug\internal_impl-25.0.1_71efa5d4152edc21f0e0d154f4745b6cba8149e2.jar" />
+        sha1="8fe8a8f77d651982ce5e18f6187dc4daf914ac57">
+        <dex dex="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-25.2.0_39ceac24c844b45797520f50232592941c93b98b\classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.0.1\jars\classes.jar"
+        is-multidex="true"
+        jar="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.2.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-25.0.1_6c25b48e4e1fc1ce84e29f395ce4a83cd134f74b.jar" />
+        sha1="cb454b52545859ed2f24a6c01366805b0fa04b22">
+        <dex dex="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-25.2.0_35f711f9c96498f7c3fb2bb89c0ba4bcfae04f50\classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.0.1\jars\classes.jar"
+        is-multidex="true"
+        jar="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\exploded-aar\com.android.support\transition\25.2.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="26c6eef571592c91f29e56fda0bac73321de0c92">
-        <dex dex="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-25.0.1_22b8d13741a688c0991d1352ed2926da28950d14.jar" />
+        sha1="e51c2f662bb72419632af5192553c37e33890a99">
+        <dex dex="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-transition-25.2.0_f957d8a8bd74d5a7c8ffef6baba972efff8d5d58\classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="772bed2d992b67b9d0327f766cc95cd63031dcd3">
-        <dex dex="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-25.0.1_2ae3895ff205994c1fb8febffe8c80e1c860537a.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.0.1\jars\libs\internal_impl-25.0.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="3af8cc51ef7088e56f132780da8c0bd858b6a6ad">
-        <dex dex="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\pre-dexed\debug\internal_impl-25.0.1_9b96150db29e73548e00334973d7e5747b2df02b.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.0.1\jars\libs\internal_impl-25.0.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="f83b00041ecfba705603fec40363416c7de69719">
-        <dex dex="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\pre-dexed\debug\internal_impl-25.0.1_1cc09637839e002128fed7137ff96361f232dc5f.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="b24e1c688744078e1fa833ffadf696794761bbe5">
-        <dex dex="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-25.0.1_9d90466af7bb368b2c0b1e8ed516166616aad374.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\sdk\extras\android\m2repository\com\android\support\support-annotations\25.0.1\support-annotations-25.0.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="a09194311f8f89c3e6db09d79f50897a889d615e">
-        <dex dex="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\pre-dexed\debug\support-annotations-25.0.1_3621c7f6294c2ffb11cd504bdf2917d72ea61f0b.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.0.1\jars\libs\internal_impl-25.0.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
-        <dex dex="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\pre-dexed\debug\internal_impl-25.0.1_63ac2142745d9b883760d5b632ec7ee319f6e8bf.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="00d4c8eebf2b681073c72a26bd0849549e51c7cb">
-        <dex dex="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-25.0.1_9443f2393c637b69aeca29f829b2a96c4bae5c59.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="6a1479afe9f1b3645e1cd9a87318976893472818">
-        <dex dex="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-25.0.1_b58222f5cdd2ad802488650c21c98bbfa7be581e.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="51eba4a4dd73044f90a9d58dd7ca34adbebfcf4e">
-        <dex dex="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\pre-dexed\debug\com.android.support-support-compat-25.0.1_fe96c45d0c39035eb63bda758b7023cb5558bd98.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.0.1\jars\libs\internal_impl-25.0.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="c0bd6ffb002a85b5e7cad29f8558d1cc59539679">
-        <dex dex="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\pre-dexed\debug\internal_impl-25.0.1_5c5404e42b9096dcace040b353ffc390d5588cad.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\25.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="297d4bcf6ed4e747a1bf7d0d094a2d911a8d3a8e">
-        <dex dex="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-25.0.1_692f19d35badf57f0748879785486aed81d8f552.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="f7ac4b327fdb9e2ee386f5adc46164927658de4b">
-        <dex dex="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-25.0.1_19554ce41244ab63963eacbf4bf38db7aa06f834.jar" />
-    </item>
-    <item
-        is-multidex="false"
+        is-multidex="true"
         jar="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="b15bbbcaeb2ee485b27caae0a25396dbe440071c">
-        <dex dex="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\pre-dexed\debug\instant-run_9202e518672d523759cf8928b20df2e7f5474967.jar" />
+        sha1="3752f4b4e3fb3555bd237da73b34512433a8fa35">
+        <dex dex="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_9202e518672d523759cf8928b20df2e7f5474967\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\sdk\extras\android\m2repository\com\android\support\support-annotations\25.2.0\support-annotations-25.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="4a5a82a027706397fff621b22fd6fa796e91d7c5">
+        <dex dex="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.2.0_6636da86169c7151508e83f33242e8e507c2158c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="665c2cb5171170c39bf955d803fb4e18e2a73c7d">
+        <dex dex="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_cc4825e22b313d828344bccd4b96e5d0e5adda13\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="756f6297eef79784f5e356dcd4f39865028b2bd0">
+        <dex dex="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-basement-10.0.1_5dbe9d76849befc14174b0ec7143936400efddb9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-25.2.0_c1ccb348d26894d43f6956f58201a1b491e8407a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\exploded-aar\com.google.firebase\firebase-iid\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="486371f97baad8e607f332f20fee1d3dd00a731a">
+        <dex dex="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-iid-10.0.1_a77f2134042daf81fdbfc7e933daa7bc5bf5bc3b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="702d339bc0a81d21354cd7e2cf2b67225fa4a16c">
+        <dex dex="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-25.2.0_216e206e38202d5b933d1a0b599cdcc75ec8c9fc\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics-impl\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="6116e0e7069de7fc259aac8e08b84f32c2038231">
+        <dex dex="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-analytics-impl-10.0.1_24b3ffe8fc7eb69e14286b8c064af4700713a0c9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="810f41e5b7fd99f196ebeabe865ba2c54e7e76dc">
+        <dex dex="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-25.2.0_3e13ce747739f753787dc008905acdc71d48016c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="433f4d6aa5f21f19552afe0e6c5eff0fedba73ad">
+        <dex dex="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-analytics-10.0.1_b40ce5e2f09496482dffe9643e22cee564b9d406\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="fa0446a14ed5dd3725047d6399ffea771a564b30">
+        <dex dex="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-25.2.0_5f6cf059a8d7d11f78e9c4502249d243929f2871\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="67eb33110dbacb46a48175b08ae0c96761d2c17d">
+        <dex dex="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-25.2.0_654ed404a2f3779ca84166ee69f231337a881fc1\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\25.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="152de8da301561dcb0946471697a420d8f7a68c5">
+        <dex dex="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-25.2.0_343dc184fe529743a441c2052017bf318591ead7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="ee394a892dd21c03a528139c1e8d4e0e1264ac84">
+        <dex dex="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-25.2.0_0f80df44309c683379b39e7d0913ddd867199786\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="6addaba208e21c6da776d0ca75b6b23a6ccd5499">
+        <dex dex="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tasks-10.0.1_87f054087b5f39135fdc5104d64372c573ae11a1\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="e820b7be8c035dd522da4bc822e8a76c8e27921a">
+        <dex dex="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-25.2.0_14068f53493d3a3409b890b1a3fe5797c082bb68\classes.dex" />
     </item>
 
 </items>

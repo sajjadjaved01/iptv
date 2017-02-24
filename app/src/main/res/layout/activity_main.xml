@@ -15,19 +15,16 @@
             android:id="@+id/playlist_params"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:text="Playlist Params" />
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp" />
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/playlist_recycler"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="10dp"
-            android:clickable="true"
             android:background="@android:color/white"
             android:cacheColorHint="@android:color/transparent"
             android:listSelector="@android:color/transparent" />
-
     </LinearLayout>
 </RelativeLayout>
