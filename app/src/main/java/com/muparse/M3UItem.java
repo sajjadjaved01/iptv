@@ -1,11 +1,5 @@
 package com.muparse;
 
-import java.io.IOException;
-
-/**
- * Created by fedor on 25.11.2016.
- */
-
 public class M3UItem {
 
     private String itemDuration;

@@ -2,193 +2,364 @@
 <items version="2" >
 
     <item
-        is-multidex="true"
-        jar="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\exploded-aar\com.google.firebase\firebase-common\10.0.1\jars\classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="C:\Users\SajjadJaved\.android\build-cache\ee7314f1db6673bef58d32b76d2080959d63fded\output\jars\classes.jar"
+        jumboMode="false"
         optimize="true"
-        revision="25.0.1"
-        sha1="eb0d830e3eabb9deb9ec44869cf7ac7ea1ad794c">
-        <dex dex="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-common-10.0.1_c2c09c980c0c1d4ef1b32195a8ad9a123c3da199\classes.dex" />
+        revision="25.0.2"
+        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
+        <dex dex="D:\sdk\iPtv\app\build\intermediates\pre-dexed\debug\classes_c51c8d5500ea238bf8ffe349df04a811e7d0b2a5.jar" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\exploded-aar\com.android.support\design\25.2.0\jars\classes.jar"
+        jar="D:\sdk\iPtv\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
-        revision="25.0.1"
-        sha1="ea6a989b83d19b1b461281e0475a6cd6514897f8">
-        <dex dex="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-25.2.0_4b9e9016bb4d8e5f33bb0f5f3270d38f3541f7e2\classes.dex" />
+        revision="25.0.2"
+        sha1="75f33ea019d4694f784554bba3a4a2e58e7d7483">
+        <dex dex="D:\sdk\iPtv\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_a9fb69233b2a270bfc2971b25e51e6ed0b09b67b\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.2.0\jars\classes.jar"
+        jar="C:\Users\SajjadJaved\.android\build-cache\ee7314f1db6673bef58d32b76d2080959d63fded\output\jars\classes.jar"
         jumboMode="true"
         optimize="true"
-        revision="25.0.1"
-        sha1="8fe8a8f77d651982ce5e18f6187dc4daf914ac57">
-        <dex dex="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-25.2.0_39ceac24c844b45797520f50232592941c93b98b\classes.dex" />
+        revision="25.0.2"
+        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
+        <dex dex="D:\sdk\iPtv\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_c51c8d5500ea238bf8ffe349df04a811e7d0b2a5\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\SajjadJaved\.android\build-cache\ee908714bc5c222aee54014626758de29b7ef4c3\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
+        <dex dex="D:\sdk\iPtv\app\build\intermediates\pre-dexed\debug\classes_d6fc723cc7c43684889d2bd4258448b81d24830d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\SajjadJaved\.android\build-cache\d070d9df36103591bf696bd2ce67d044e69c8229\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ce9112e08a027c8620ae693983e38cdbb9f6371b">
+        <dex dex="D:\sdk\iPtv\app\build\intermediates\pre-dexed\debug\classes_60038bd7c6cd8353cfbf1fbe025b8f8d28ba7fbb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\SajjadJaved\.android\build-cache\b253a9128828ba6aeb5d6aa9104cfe0646f47f2d\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3d6951cb416ebf8c66a32b9480808ca247b68344">
+        <dex dex="D:\sdk\iPtv\app\build\intermediates\pre-dexed\debug\classes_8be9689c661ef5d48e3c68bbcb8bd70a7da65709.jar" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.2.0\jars\classes.jar"
+        jar="C:\Users\SajjadJaved\.android\build-cache\b253a9128828ba6aeb5d6aa9104cfe0646f47f2d\output\jars\classes.jar"
         jumboMode="true"
         optimize="true"
-        revision="25.0.1"
-        sha1="cb454b52545859ed2f24a6c01366805b0fa04b22">
-        <dex dex="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-25.2.0_35f711f9c96498f7c3fb2bb89c0ba4bcfae04f50\classes.dex" />
+        revision="25.0.2"
+        sha1="3d6951cb416ebf8c66a32b9480808ca247b68344">
+        <dex dex="D:\sdk\iPtv\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_8be9689c661ef5d48e3c68bbcb8bd70a7da65709\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\exploded-aar\com.android.support\transition\25.2.0\jars\classes.jar"
+        jar="C:\Users\SajjadJaved\.android\build-cache\d070d9df36103591bf696bd2ce67d044e69c8229\output\jars\classes.jar"
         jumboMode="true"
         optimize="true"
-        revision="25.0.1"
-        sha1="e51c2f662bb72419632af5192553c37e33890a99">
-        <dex dex="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-transition-25.2.0_f957d8a8bd74d5a7c8ffef6baba972efff8d5d58\classes.dex" />
+        revision="25.0.2"
+        sha1="ce9112e08a027c8620ae693983e38cdbb9f6371b">
+        <dex dex="D:\sdk\iPtv\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_60038bd7c6cd8353cfbf1fbe025b8f8d28ba7fbb\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\SajjadJaved\.android\build-cache\02221ddd917962766a4d6d08630e46865940ef49\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="95519720620b553f63afc789beba9ad582807f7c">
+        <dex dex="D:\sdk\iPtv\app\build\intermediates\pre-dexed\debug\classes_990aa47d695005757a483c04da35eb96a62639b5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\SajjadJaved\.android\build-cache\e253bf265a0a59d515596014ccfefea9518424b4\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="38789e20ace9ab7dbd00554bd2673ab424478d3b">
+        <dex dex="D:\sdk\iPtv\app\build\intermediates\pre-dexed\debug\classes_8abd0ad041521fcdf89f8484dfb93814ee24c52f.jar" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jar="C:\Users\SajjadJaved\.android\build-cache\ee908714bc5c222aee54014626758de29b7ef4c3\output\jars\classes.jar"
         jumboMode="true"
         optimize="true"
-        revision="25.0.1"
-        sha1="3752f4b4e3fb3555bd237da73b34512433a8fa35">
-        <dex dex="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_9202e518672d523759cf8928b20df2e7f5474967\classes.dex" />
+        revision="25.0.2"
+        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
+        <dex dex="D:\sdk\iPtv\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_d6fc723cc7c43684889d2bd4258448b81d24830d\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\SajjadJaved\.android\build-cache\d64e6b3d0f74ffdebd0e459fe73ab944e4c34472\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
+        <dex dex="D:\sdk\iPtv\app\build\intermediates\pre-dexed\debug\classes_7a7590e8028d445d2473c0ba2fe3649e87a504a3.jar" />
     </item>
     <item
         is-multidex="true"
-        jar="D:\sdk\extras\android\m2repository\com\android\support\support-annotations\25.2.0\support-annotations-25.2.0.jar"
+        jar="C:\Users\SajjadJaved\.android\build-cache\2f19f5f2d468b0f10b3f6b42d0c5550894835808\output\jars\classes.jar"
         jumboMode="true"
         optimize="true"
-        revision="25.0.1"
-        sha1="4a5a82a027706397fff621b22fd6fa796e91d7c5">
-        <dex dex="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.2.0_6636da86169c7151508e83f33242e8e507c2158c\classes.dex" />
+        revision="25.0.2"
+        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
+        <dex dex="D:\sdk\iPtv\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_901a55d04d1c7ef4a062ad3f4dd27de74377ca17\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\SajjadJaved\.android\build-cache\2f19f5f2d468b0f10b3f6b42d0c5550894835808\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
+        <dex dex="D:\sdk\iPtv\app\build\intermediates\pre-dexed\debug\classes_901a55d04d1c7ef4a062ad3f4dd27de74377ca17.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\SajjadJaved\.android\build-cache\4ac5c6cb49c13b63ee72708b1f267bfc7592ea3e\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
+        <dex dex="D:\sdk\iPtv\app\build\intermediates\pre-dexed\debug\classes_70151256333e4fa7f3e62d2d37c1393f0ea38c41.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\SajjadJaved\.android\build-cache\79e0851675856d0050b09e464e97da79025d15c7\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="1ac56e5801e986583cbe27f2cce57f626cc7ff93">
+        <dex dex="D:\sdk\iPtv\app\build\intermediates\pre-dexed\debug\classes_48322f4efcc9198ece2597e3749983b97099be19.jar" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jar="D:\sdk\extras\android\m2repository\com\android\support\support-annotations\25.3.1\support-annotations-25.3.1.jar"
         jumboMode="true"
         optimize="true"
-        revision="25.0.1"
-        sha1="665c2cb5171170c39bf955d803fb4e18e2a73c7d">
-        <dex dex="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_cc4825e22b313d828344bccd4b96e5d0e5adda13\classes.dex" />
+        revision="25.0.2"
+        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
+        <dex dex="D:\sdk\iPtv\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.3.1_cfa7e4f6acdbb5a37cc4fde833ccf160c11355f4\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\10.0.1\jars\classes.jar"
+        jar="C:\Users\SajjadJaved\.android\build-cache\79e0851675856d0050b09e464e97da79025d15c7\output\jars\classes.jar"
         jumboMode="true"
         optimize="true"
-        revision="25.0.1"
-        sha1="756f6297eef79784f5e356dcd4f39865028b2bd0">
-        <dex dex="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-basement-10.0.1_5dbe9d76849befc14174b0ec7143936400efddb9\classes.dex" />
+        revision="25.0.2"
+        sha1="1ac56e5801e986583cbe27f2cce57f626cc7ff93">
+        <dex dex="D:\sdk\iPtv\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_48322f4efcc9198ece2597e3749983b97099be19\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\SajjadJaved\.android\build-cache\8f416d7b7c24c0544c444647257e426409233fff\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="a61e7010aa7be5da53cd1bc5279630510c9a4912">
+        <dex dex="D:\sdk\iPtv\app\build\intermediates\pre-dexed\debug\classes_9276c54e0d3ecb4a294d91cd79079ddd87687806.jar" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.2.0\jars\classes.jar"
+        jar="C:\Users\SajjadJaved\.android\build-cache\d29025f737d06dfe3794205529d1cb23aa54c204\output\jars\classes.jar"
         jumboMode="true"
         optimize="true"
-        revision="25.0.1"
+        revision="25.0.2"
+        sha1="d4cf6227dd6a2ceff0f7dcf0c324380b7abf2c28">
+        <dex dex="D:\sdk\iPtv\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_5023e2659078098f10111a478780709ce410c0c5\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\SajjadJaved\.android\build-cache\57b907a2ffcb760ee00dccacce523ba277d83b56\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
+        <dex dex="D:\sdk\iPtv\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_556b820cebd248f660279845061f22b3744d499e\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\SajjadJaved\.android\build-cache\d29025f737d06dfe3794205529d1cb23aa54c204\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d4cf6227dd6a2ceff0f7dcf0c324380b7abf2c28">
+        <dex dex="D:\sdk\iPtv\app\build\intermediates\pre-dexed\debug\classes_5023e2659078098f10111a478780709ce410c0c5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\SajjadJaved\.android\build-cache\57b907a2ffcb760ee00dccacce523ba277d83b56\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
+        <dex dex="D:\sdk\iPtv\app\build\intermediates\pre-dexed\debug\classes_556b820cebd248f660279845061f22b3744d499e.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\SajjadJaved\.android\build-cache\4ac5c6cb49c13b63ee72708b1f267bfc7592ea3e\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
+        <dex dex="D:\sdk\iPtv\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_70151256333e4fa7f3e62d2d37c1393f0ea38c41\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\SajjadJaved\.android\build-cache\8f416d7b7c24c0544c444647257e426409233fff\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="a61e7010aa7be5da53cd1bc5279630510c9a4912">
+        <dex dex="D:\sdk\iPtv\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_9276c54e0d3ecb4a294d91cd79079ddd87687806\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\SajjadJaved\.android\build-cache\d64e6b3d0f74ffdebd0e459fe73ab944e4c34472\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
+        <dex dex="D:\sdk\iPtv\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_7a7590e8028d445d2473c0ba2fe3649e87a504a3\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\SajjadJaved\.android\build-cache\3e3cf2c9180b1e61742f0f9198d9650958ae5d0b\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0d5cbbbfe040201c7569478b70a13b58fd11aab4">
+        <dex dex="D:\sdk\iPtv\app\build\intermediates\pre-dexed\debug\classes_36d0c43951e89e9b2fba7bf44d2f1ec0296d90c9.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\SajjadJaved\.android\build-cache\e253bf265a0a59d515596014ccfefea9518424b4\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="38789e20ace9ab7dbd00554bd2673ab424478d3b">
+        <dex dex="D:\sdk\iPtv\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_8abd0ad041521fcdf89f8484dfb93814ee24c52f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\SajjadJaved\.android\build-cache\3e3cf2c9180b1e61742f0f9198d9650958ae5d0b\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0d5cbbbfe040201c7569478b70a13b58fd11aab4">
+        <dex dex="D:\sdk\iPtv\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_36d0c43951e89e9b2fba7bf44d2f1ec0296d90c9\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\SajjadJaved\.android\build-cache\2cbe95d9f815ed504cb9162f51d9cde4775b11aa\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
         sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-25.2.0_c1ccb348d26894d43f6956f58201a1b491e8407a\classes.dex" />
+        <dex dex="D:\sdk\iPtv\app\build\intermediates\pre-dexed\debug\classes_1c9300542a6d256369debc1916e053007411c331.jar" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\exploded-aar\com.google.firebase\firebase-iid\10.0.1\jars\classes.jar"
+        jar="C:\Users\SajjadJaved\.android\build-cache\2cbe95d9f815ed504cb9162f51d9cde4775b11aa\output\jars\classes.jar"
         jumboMode="true"
         optimize="true"
-        revision="25.0.1"
-        sha1="486371f97baad8e607f332f20fee1d3dd00a731a">
-        <dex dex="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-iid-10.0.1_a77f2134042daf81fdbfc7e933daa7bc5bf5bc3b\classes.dex" />
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="D:\sdk\iPtv\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_1c9300542a6d256369debc1916e053007411c331\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\sdk\extras\android\m2repository\com\android\support\support-annotations\25.3.1\support-annotations-25.3.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
+        <dex dex="D:\sdk\iPtv\app\build\intermediates\pre-dexed\debug\support-annotations-25.3.1_cfa7e4f6acdbb5a37cc4fde833ccf160c11355f4.jar" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.2.0\jars\classes.jar"
+        jar="D:\sdk\iPtv\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
-        revision="25.0.1"
-        sha1="702d339bc0a81d21354cd7e2cf2b67225fa4a16c">
-        <dex dex="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-25.2.0_216e206e38202d5b933d1a0b599cdcc75ec8c9fc\classes.dex" />
+        revision="25.0.2"
+        sha1="c82741bc129dd5f99f11a4ab8666ae24262053b6">
+        <dex dex="D:\sdk\iPtv\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_8632463d48b52f8d398fbb30997c681e384dfdb7\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\SajjadJaved\.android\build-cache\c28c99a7dd227adc0f4e3182cf6c2dbd19c37963\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
+        <dex dex="D:\sdk\iPtv\app\build\intermediates\pre-dexed\debug\classes_aae179a3b47b1b8fb83b813ed81d24164ae4463a.jar" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics-impl\10.0.1\jars\classes.jar"
+        jar="C:\Users\SajjadJaved\.android\build-cache\02221ddd917962766a4d6d08630e46865940ef49\output\jars\classes.jar"
         jumboMode="true"
         optimize="true"
-        revision="25.0.1"
-        sha1="6116e0e7069de7fc259aac8e08b84f32c2038231">
-        <dex dex="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-analytics-impl-10.0.1_24b3ffe8fc7eb69e14286b8c064af4700713a0c9\classes.dex" />
+        revision="25.0.2"
+        sha1="95519720620b553f63afc789beba9ad582807f7c">
+        <dex dex="D:\sdk\iPtv\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_990aa47d695005757a483c04da35eb96a62639b5\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\SajjadJaved\.android\build-cache\49477e2247e88dd019566fe52b16a0a46817c7e9\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="bd75f9f0296fe220da6d0ad961831b04541c4452">
+        <dex dex="D:\sdk\iPtv\app\build\intermediates\pre-dexed\debug\classes_f7f6bab5d1cabf2674ba676001879e6260165fd8.jar" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.2.0\jars\classes.jar"
+        jar="C:\Users\SajjadJaved\.android\build-cache\c28c99a7dd227adc0f4e3182cf6c2dbd19c37963\output\jars\classes.jar"
         jumboMode="true"
         optimize="true"
-        revision="25.0.1"
-        sha1="810f41e5b7fd99f196ebeabe865ba2c54e7e76dc">
-        <dex dex="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-25.2.0_3e13ce747739f753787dc008905acdc71d48016c\classes.dex" />
+        revision="25.0.2"
+        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
+        <dex dex="D:\sdk\iPtv\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_aae179a3b47b1b8fb83b813ed81d24164ae4463a\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics\10.0.1\jars\classes.jar"
+        jar="C:\Users\SajjadJaved\.android\build-cache\49477e2247e88dd019566fe52b16a0a46817c7e9\output\jars\classes.jar"
         jumboMode="true"
         optimize="true"
-        revision="25.0.1"
-        sha1="433f4d6aa5f21f19552afe0e6c5eff0fedba73ad">
-        <dex dex="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-analytics-10.0.1_b40ce5e2f09496482dffe9643e22cee564b9d406\classes.dex" />
+        revision="25.0.2"
+        sha1="bd75f9f0296fe220da6d0ad961831b04541c4452">
+        <dex dex="D:\sdk\iPtv\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_f7f6bab5d1cabf2674ba676001879e6260165fd8\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.2.0\jars\classes.jar"
+        jar="C:\Users\SajjadJaved\.android\build-cache\f0def06de817799caa7bb446f153226fd5808f00\output\jars\classes.jar"
         jumboMode="true"
         optimize="true"
-        revision="25.0.1"
-        sha1="fa0446a14ed5dd3725047d6399ffea771a564b30">
-        <dex dex="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-25.2.0_5f6cf059a8d7d11f78e9c4502249d243929f2871\classes.dex" />
+        revision="25.0.2"
+        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
+        <dex dex="D:\sdk\iPtv\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_e91ca2245a37b3338baa4fb7ae084ca9c162c6e2\classes.dex" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.2.0\jars\classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="C:\Users\SajjadJaved\.android\build-cache\f0def06de817799caa7bb446f153226fd5808f00\output\jars\classes.jar"
+        jumboMode="false"
         optimize="true"
-        revision="25.0.1"
-        sha1="67eb33110dbacb46a48175b08ae0c96761d2c17d">
-        <dex dex="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-25.2.0_654ed404a2f3779ca84166ee69f231337a881fc1\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\25.2.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="152de8da301561dcb0946471697a420d8f7a68c5">
-        <dex dex="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-25.2.0_343dc184fe529743a441c2052017bf318591ead7\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.2.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="ee394a892dd21c03a528139c1e8d4e0e1264ac84">
-        <dex dex="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-25.2.0_0f80df44309c683379b39e7d0913ddd867199786\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="6addaba208e21c6da776d0ca75b6b23a6ccd5499">
-        <dex dex="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tasks-10.0.1_87f054087b5f39135fdc5104d64372c573ae11a1\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.2.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="e820b7be8c035dd522da4bc822e8a76c8e27921a">
-        <dex dex="C:\Users\Sajjad\Desktop\M3U-Parser-master\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-25.2.0_14068f53493d3a3409b890b1a3fe5797c082bb68\classes.dex" />
+        revision="25.0.2"
+        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
+        <dex dex="D:\sdk\iPtv\app\build\intermediates\pre-dexed\debug\classes_e91ca2245a37b3338baa4fb7ae084ca9c162c6e2.jar" />
     </item>
 
 </items>

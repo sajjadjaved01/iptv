@@ -1,9 +1,5 @@
 <resources>
     <string name="app_name">NetupTv</string>
-    <string name="playlists_add_playlist">Add playlist</string>
-    <string name="playlists_ask_provider">Please contact your IPTV provider to get M3U or XSPF playlist with TV channels</string>
-    <string name="loading">Loading…</string>
-    <string name="title_activity_item_playlist">item_playlist</string>
     <string name="netuptv_for_online_streaming">NetupTv Live Streaming App</string>
     <string name="prompt_email">User Name</string>
     <string name="prompt_password">Password</string>
@@ -11,12 +7,12 @@
     <string name="action_sign_in">Sign In</string>
     <string name="error_invalid_email">This email address is invalid</string>
     <string name="error_invalid_password">This password is too short</string>
-    <string name="error_incorrect_password">This password is incorrect</string>
-    <string name="error_field_required">This field is required</string>
-    <string name="not_connected">Not connected</string>
-    <string name="settings">Settings</string>
+    <string name="error_field_required">Required</string>
     <string name="about">About</string>
     <string name="search">Search</string>
 
+    <string name="browse">Browse</string>
+    <string name="logout">Logout</string>
+    <string name="iptv">IPTV</string>
 
 </resources>

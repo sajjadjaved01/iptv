@@ -1,17 +1,11 @@
 package com.muparse;
 
-import android.util.Log;
-
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
-
-/**
- * Created by fedor on 25.11.2016.
- */
 
 public class M3UParser {
 
@@ -53,12 +47,10 @@ public class M3UParser {
                 if (dataArray[0].contains(EXT_LOGO)) {
                     String duration = dataArray[0].substring(0, dataArray[0].indexOf(EXT_LOGO)).replace(":", "").replace("\n", "");
                     String icon = dataArray[0].substring(dataArray[0].indexOf(EXT_LOGO) + EXT_LOGO.length()).replace("=", "").replace("\"", "").replace("\n", "");
-                    ;
                     playlistItem.setItemDuration(duration);
                     playlistItem.setItemIcon(icon);
                 } else {
                     String duration = dataArray[0].replace(":", "").replace("\n", "");
-                    ;
                     playlistItem.setItemDuration(duration);
                     playlistItem.setItemIcon("");
                 }

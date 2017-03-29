@@ -12,23 +12,25 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/logo"
+        android:fullBackupContent="false"
+        android:icon="@drawable/_logo"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <activity android:name=".item_playlist" />
+        <activity android:name=".MainActivity" />
         <activity
-            android:name=".item_playlist"
-            android:label="@string/title_activity_item_playlist"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".MainActivity"></activity>
+            android:name=".About"
+            android:label="@string/about"
+            android:parentActivityName=".MainActivity">
+
+        </activity>
     </application>
 
 </manifest>

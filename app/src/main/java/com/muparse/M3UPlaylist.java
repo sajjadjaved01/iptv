@@ -2,10 +2,6 @@ package com.muparse;
 
 import java.util.List;
 
-/**
- * Created by fedor on 25.11.2016.
- */
-
 public class M3UPlaylist {
 
     private String playlistName;
@@ -43,8 +39,7 @@ public class M3UPlaylist {
         for (int i = 0; i < paramsArray.length; i++) {
             String parameter = paramsArray[i];
             if (parameter.contains(paramName)) {
-                String paramValue = parameter.substring(parameter.indexOf(paramName) + paramName.length()).replace("=", "");
-                return paramValue;
+                return parameter.substring(parameter.indexOf(paramName) + paramName.length()).replace("=", "");
             }
         }
         return "";
