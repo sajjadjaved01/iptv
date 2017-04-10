@@ -10,26 +10,39 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
+import android.widget.ListAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.analytics.FirebaseAnalytics;
+import com.squareup.picasso.Picasso;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PlaylistAdapter extends RecyclerView.Adapter<PlaylistAdapter.ItemHolder> {
+public class PlaylistAdapter extends RecyclerView.Adapter<PlaylistAdapter.ItemHolder> implements Filterable {
 
     private final Context mContext;
     private final LayoutInflater mInflater;
     private final MainActivity min = new MainActivity();
-    Uri marketUri = Uri.parse("market://details?id=com.mxtech.videoplayer.ad");//("market://search?q=com.mxtech.videoplayer.ad");
-    private List<M3UItem> mItem = new ArrayList<M3UItem>();
+    private List<M3UItem> mItem = new ArrayList<>();
 
     public PlaylistAdapter(Context c) {
         mContext = c;
@@ -60,31 +73,60 @@ public class PlaylistAdapter extends RecyclerView.Adapter<PlaylistAdapter.ItemHo
         return mItem.size();
     }
 
-    public void update(List<M3UItem> _list) {
+    void update(List<M3UItem> _list) {
         this.mItem = _list;
         notifyDataSetChanged();
+    }
+
+    @Override
+    public Filter getFilter() {
+        return new Filter() { //TODO search it on github
+            @Override
+            protected void publishResults(CharSequence constraint, FilterResults results) {
+                mItem.clear();
+                //mItem.addAll((ArrayList<M3UItem>) results.values);
+                notifyDataSetChanged();
+            }
+            @Override
+            protected FilterResults performFiltering(CharSequence constraint) {
+                FilterResults results = new FilterResults();
+                if (!(constraint.length() == 0)){
+                    mItem.clear();
+                    final String filtePatt = constraint.toString().toLowerCase().trim();
+                    for (M3UItem itm: mItem){
+                        if (itm.getItemName().toLowerCase().contains(filtePatt)){
+                            Toast.makeText(mContext, "Google", Toast.LENGTH_SHORT).show();
+                            mItem.add(itm);
+                        }
+                        mItem.add(itm);
+                    }
+                }
+                results.values = mItem;
+                results.count = mItem.size();
+                return results;
+            }
+        };
     }
 
     public class ItemHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         final PackageManager pm = mContext.getPackageManager();
         final boolean isApp = min.isPackageInstalled(pm);
-        //TextView url;
         TextView name;
         ImageView cImg;
 
-        public ItemHolder(View view) {
+        ItemHolder(View view) {
             super(view);
             view.setOnClickListener(this);
             name = (TextView) view.findViewById(R.id.item_name);
             cImg = (ImageView) view.findViewById(R.id.cimg);
-            //url = (TextView) view.findViewById(R.id.item_url);
         }
 
-        public void update(final M3UItem item) {
+        void update(final M3UItem item) {
+            try {
             name.setText(item.getItemName());
-            cImg.setImageResource(R.drawable.info_ico);
-            // url.setText(item.getItemUrl());
+            Picasso.with(mContext).load(item.getItemIcon()).into(cImg);
+            }catch (Exception ignored){}
         }
 
         public void onClick(View v) {
@@ -94,11 +136,9 @@ public class PlaylistAdapter extends RecyclerView.Adapter<PlaylistAdapter.ItemHo
                 if (isApp) { //isApplicationInstalled
                     playy(imm.getItemUrl(), imm.getItemName());
                 } else { // isApplicationNotFound
-                    playerNotFound();
+                    playerNotFound(mContext,"iPtv","Player not found. Install MX Player.");
                 }
-            } catch (Exception e) {
-                Toast.makeText(mContext, "Error: " + e.getMessage(), Toast.LENGTH_LONG).show();
-            }
+            } catch (Exception ignored) {}
         }
 
         void playy(String urli, String channel) {
@@ -110,20 +150,18 @@ public class PlaylistAdapter extends RecyclerView.Adapter<PlaylistAdapter.ItemHo
                 intent.setPackage("com.mxtech.videoplayer.ad");
                 intent.putExtra("title", channel);
                 mContext.startActivity(intent);
-            } catch (Exception e) {
-                Toast.makeText(mContext, "Error: " + e.getMessage(), Toast.LENGTH_LONG).show();
-            }
+            } catch (Exception ignored) {}
         }
 
-        void playerNotFound() {
-            AlertDialog.Builder localBuilder = new AlertDialog.Builder(mContext);
-            localBuilder.setTitle("iPtv");
-            localBuilder.setMessage("Player not found. Install MX Player.");
+        void playerNotFound(Context context,String title,String message) {
+            AlertDialog.Builder localBuilder = new AlertDialog.Builder(context);
+            localBuilder.setTitle(title);
+            localBuilder.setMessage(message);
             localBuilder.setPositiveButton("Install", new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface paramAnonymousDialogInterface, int paramAnonymousInt) {
                     try {
                         mContext.startActivity(new Intent("android.intent.action.VIEW", Uri.parse("market://details?id=com.mxtech.videoplayer.ad")));
-                    } catch (ActivityNotFoundException localActivityNotFoundException) {
+                    } catch (ActivityNotFoundException ActivityNotFoundException) {
                         mContext.startActivity(new Intent("android.intent.action.VIEW", Uri.parse("https://play.google.com/store/apps/details?id=com.mxtech.videoplayer.ad&hl=en")));
                     }
                 }
@@ -135,6 +173,5 @@ public class PlaylistAdapter extends RecyclerView.Adapter<PlaylistAdapter.ItemHo
             //localBuilder.setCancelable(false);
             localBuilder.create().show();
         }
-
     }
 }

@@ -1,7 +1,7 @@
 #EXTM3U
-#EXTINF:-1,AR: BEIN SPORT 1
+#EXTINF:-1 tvg-logo="https://www.google.com.pk/images/branding/googlelogo/2x/googlelogo_color_120x44dp.png",AR: Sajjad
 http://portal.onlineiptv.net:5210/live/fNOaPbcqCB/yttnwNGpCR/11003.ts
-#EXTINF:-1,AR: BEIN SPORT 2
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/7/78/BeIN_COLLEGE_SPORTS_logo_2017.jpg",AR: BEIN SPORT 2
 http://portal.onlineiptv.net:5210/live/fNOaPbcqCB/yttnwNGpCR/11002.ts
 #EXTINF:-1,AR: BEIN SPORT 3
 http://portal.onlineiptv.net:5210/live/fNOaPbcqCB/yttnwNGpCR/11001.ts

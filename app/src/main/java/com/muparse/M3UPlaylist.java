@@ -2,7 +2,7 @@ package com.muparse;
 
 import java.util.List;
 
-public class M3UPlaylist {
+class M3UPlaylist {
 
     private String playlistName;
 
@@ -10,11 +10,11 @@ public class M3UPlaylist {
 
     private List<M3UItem> playlistItems;
 
-    public List<M3UItem> getPlaylistItems() {
+    List<M3UItem> getPlaylistItems() {
         return playlistItems;
     }
 
-    public void setPlaylistItems(List<M3UItem> playlistItems) {
+    void setPlaylistItems(List<M3UItem> playlistItems) {
         this.playlistItems = playlistItems;
     }
 
@@ -36,8 +36,7 @@ public class M3UPlaylist {
 
     public String getSingleParameter(String paramName) {
         String[] paramsArray = this.playlistParams.split(" ");
-        for (int i = 0; i < paramsArray.length; i++) {
-            String parameter = paramsArray[i];
+        for (String parameter : paramsArray) {
             if (parameter.contains(paramName)) {
                 return parameter.substring(parameter.indexOf(paramName) + paramName.length()).replace("=", "");
             }

@@ -45,12 +45,11 @@ public class Login extends AppCompatActivity {
 
     static final File DEFA = Environment.getExternalStorageDirectory();
     static final File dir = new File(DEFA.getPath() + "/Netuptv");
-    static final File filepath = new File(dir.getPath() + "/iptv_data.m3u");
+    static final File filepath = new File(dir.getPath() + "/data.m3u");
     FirebaseAnalytics firebaseAnalytics;
     ConnectivityManager cm;
     NetworkInfo activeNetwork;
     SharedPreferences.Editor editor;
-    Intent intent;
     private EditText mEmailView;
     private EditText mPasswordView;
     private ProgressBar spinner;
@@ -82,9 +81,15 @@ public class Login extends AppCompatActivity {
         mEmailSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                checkNet();
+//                checkNet();
+                Intent o = new Intent(getApplicationContext(),searchActivity.class);
+                startActivity(o);
             }
         });
+
+        Bundle bundle = new Bundle();
+        bundle.putString(FirebaseAnalytics.Param.ITEM_ID, "LoginActivity");
+        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT,bundle);
     }
 
     public void checkNet() {
@@ -96,7 +101,7 @@ public class Login extends AppCompatActivity {
 //            } else if (activeNetwork.getType() == ConnectivityManager.TYPE_MOBILE) {
 //               attemptLogin();
 //            }
-        }
+        } else { activateWIFI(); }
     }
 
     @SuppressWarnings("All")
@@ -152,18 +157,7 @@ public class Login extends AppCompatActivity {
             // There was an error; don't attempt login and focus the first form field with an error.
             focusView.requestFocus();
         } else {
-            // Show a progress spinner, and kick off a background task to perform the user login attempt.
-            File fCheck = new File(filepath.getPath());
-            if (fCheck.canRead()) {
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                Toast.makeText(this, "FileFound", Toast.LENGTH_SHORT).show();
-                startActivity(intent);
-            } else {
-            }
-            //String state = Environment.getExternalStorageState();
-            // if (state.equals(Environment.MEDIA_MOUNTED_READ_ONLY)) {
-//            new _Pingpong().execute("https://www.google.com.pk");
-            new _checkNetworkAvailable().execute("http://portal.onlineiptv.net:5210/get.php?username=" + mEmailView.getText() + "&password=" + mPasswordView.getText() + "&type=m3u&output=ts");
+            new _checkNetworkAvailable().execute("http://portal.onlineiptv.net:5210/get.php?username=fNOaPbcqCB&password=yttnwNGpCR&type=m3u&output=ts");//"http://portal.onlineiptv.net:5210/get.php?username=" + mEmailView.getText() + "&password=" + mPasswordView.getText() + "&type=m3u&output=ts");
 //            }
 //            }else {
 //                Toast.makeText(this, "Unable to  get Storage", Toast.LENGTH_SHORT).show();
@@ -200,10 +194,12 @@ public class Login extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         boolean isAccess = isLoggedIn();
+        boolean isAva = isNetworkAvailable();
         if (isAccess) {
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(intent);
         }
+        if (!isAva){activateWIFI();}
     }
 
     boolean isLoggedIn() {
@@ -212,13 +208,7 @@ public class Login extends AppCompatActivity {
     }
 
     private boolean isNetworkAvailable() {
-        if (activeNetwork != null && activeNetwork.isConnected()) {
-            return true;
-        } else {
-            activateWIFI();
-            return false;
-        }
-        //return (activeNetwork != null) && (activeNetwork.isConnected());
+        return activeNetwork != null && activeNetwork.isConnected();
     }
 
     void gfgf(String ff) {
@@ -292,7 +282,7 @@ public class Login extends AppCompatActivity {
                         new InputStreamReader(yahoo.openStream()));
                 String inputLine;
 
-                OutputStreamWriter myOutWriter = new FileWriter(dir.getPath() + "/iptv_data.m3u");
+                OutputStreamWriter myOutWriter = new FileWriter(dir.getPath()+"/"+"data.m3u");
                 while ((inputLine = in.readLine()) != null) {
                     myOutWriter.write(inputLine + "\n");
                 }
@@ -313,6 +303,7 @@ public class Login extends AppCompatActivity {
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
             spinner.setVisibility(View.GONE);
             startActivity(intent);
+            finish();
         }
     }
 }

@@ -16,17 +16,18 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.InputStream;
 
-import static com.muparse.Login.dir;
 import static com.muparse.Login.filepath;
 
 
-public class MainActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
+public class MainActivity extends AppCompatActivity implements SearchView.OnQueryTextListener{
 
     final M3UParser parser = new M3UParser();
     TextView mPlaylistParams;
@@ -45,29 +46,19 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         mPlaylistList = (RecyclerView) findViewById(R.id.playlist_recycler);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         mPlaylistList.setLayoutManager(layoutManager);
-        File fCheck = new File(filepath.getPath());
-        if (fCheck.exists()) {
-            Log.d("Google", dir.getPath() + "/iptv_data.m3u");
-        }
-        loader("file:///storage/emulated/0/Netuptv/iptv_data.m3u");
-
+        mAdapter = new PlaylistAdapter(this);
+        mPlaylistList.setAdapter(mAdapter);
+        loader(filepath.getPath());
     }
 
     void loader(String name) {
-        mAdapter = new PlaylistAdapter(this);
-        mPlaylistList.setAdapter(mAdapter);
 
-        try {
-//            File lfile = new File(name);
-//            if (name.startsWith("file:///storage/emulated/0/")){
-//                lfile = new File(Environment.getExternalStorageDirectory(), name.substring(27));
-//            }
-            is = getAssets().open(String.valueOf(name));
+        try { //new FileInputStream (new File(name)
+            is = new FileInputStream(new File(name)); // if u r trying to open file from asstes InputStream is = getassets.open(); InputStream
             M3UPlaylist playlist = parser.parseFile(is);
-            mPlaylistParams.setText(playlist.getPlaylistParams());
             mAdapter.update(playlist.getPlaylistItems());
         } catch (Exception e) {
-            Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
+            Log.d("Google",""+e.toString());
         }
     }
 
@@ -95,11 +86,12 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public boolean onCreateOptionsMenu(final Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.main_menu, menu);
         MenuItem search = menu.findItem(R.id.app_bar_search);
         SearchView searchView = (SearchView) MenuItemCompat.getActionView(search);
+        searchView.setQueryHint("Search channel name");
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -107,12 +99,15 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
             }
 
             @Override
-            public boolean onQueryTextChange(String newText) {
-                return false;
+            public boolean onQueryTextChange(final String newText) {
+                //TODO here changes the search text)
+                mAdapter.getFilter().filter(newText);
+                return true;
             }
         });
         return true;
     }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -125,13 +120,14 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
                 editor.clear();
                 editor.apply();
                 Intent intent = new Intent(getApplicationContext(), Login.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
                 break;
             case R.id.browse:
                 browser();
                 break;
             case R.id.about:
-                Intent abt = new Intent(getApplicationContext(), About.class);
+                Intent abt = new Intent(MainActivity.this, About.class);
                 startActivity(abt);
                 break;
             default: {
@@ -143,13 +139,17 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
 
     private void browser() {
         if (mBrowser == null) {
-            mBrowser = FileBrowser.createFileBrowser(this, new FileBrowser.OnFileSelectedListener() {
+            mBrowser = FileBrowser.createFileBrowser(this,new FileBrowser.OnFileSelectedListener(){
 
                 @Override
                 public void onFileSelected(String path) {
                     if (mBrowser != null && mBrowser.isShowing()) {
-                        loader(path);
-                        mBrowser.dismiss();
+                        try{
+                            is = new FileInputStream(new File(path));
+                            M3UPlaylist playlist = parser.parseFile(is);
+                            mAdapter.update(playlist.getPlaylistItems());
+                            mBrowser.dismiss();
+                        }catch (Exception ignored){}
                     }
 
                 }
@@ -157,6 +157,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
             mBrowser.setOnDismissListener(new DialogInterface.OnDismissListener() {
                 @Override
                 public void onDismiss(DialogInterface dialog) {
+                    Toast.makeText(MainActivity.this, "Nothing selected", Toast.LENGTH_SHORT).show();
                 }
             });
         }
@@ -164,14 +165,12 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     }
 
     @Override
-    public boolean onQueryTextChange(String query) {
-        // Here is where we are going to implement the filter logic
-        Toast.makeText(this, "" + query, Toast.LENGTH_SHORT).show();
+    public boolean onQueryTextSubmit(String query) {
         return false;
     }
 
     @Override
-    public boolean onQueryTextSubmit(String query) {
+    public boolean onQueryTextChange(String newText) {
         return false;
     }
 }

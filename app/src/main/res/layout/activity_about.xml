@@ -15,6 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="10dp"
+        android:paddingStart="125sp"
         android:text="@string/iptv"
         android:textSize="28sp"
         android:textStyle="bold" />
@@ -23,6 +24,7 @@
         android:id="@+id/txtver"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:layout_alignEnd="@+id/txtmain"
         android:layout_below="@+id/txtmain"
         android:text="Version"

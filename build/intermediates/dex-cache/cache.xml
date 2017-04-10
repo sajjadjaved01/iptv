@@ -2,292 +2,67 @@
 <items version="2" >
 
     <item
-        is-multidex="false"
-        jar="C:\Users\SajjadJaved\.android\build-cache\ee7314f1db6673bef58d32b76d2080959d63fded\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
-        <dex dex="D:\sdk\iPtv\app\build\intermediates\pre-dexed\debug\classes_c51c8d5500ea238bf8ffe349df04a811e7d0b2a5.jar" />
-    </item>
-    <item
         is-multidex="true"
         jar="D:\sdk\iPtv\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="75f33ea019d4694f784554bba3a4a2e58e7d7483">
+        sha1="3bc8f92f73900b8eb5c4486abf97f179c13e7101">
         <dex dex="D:\sdk\iPtv\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_a9fb69233b2a270bfc2971b25e51e6ed0b09b67b\classes.dex" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\SajjadJaved\.android\build-cache\ee7314f1db6673bef58d32b76d2080959d63fded\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
-        <dex dex="D:\sdk\iPtv\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_c51c8d5500ea238bf8ffe349df04a811e7d0b2a5\classes.dex" />
-    </item>
-    <item
         is-multidex="false"
-        jar="C:\Users\SajjadJaved\.android\build-cache\ee908714bc5c222aee54014626758de29b7ef4c3\output\jars\classes.jar"
+        jar="C:\Users\SajjadJaved\.android\build-cache\da0dd7a04240bbc1b7c275bfea0607406b51a012\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
-        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
-        <dex dex="D:\sdk\iPtv\app\build\intermediates\pre-dexed\debug\classes_d6fc723cc7c43684889d2bd4258448b81d24830d.jar" />
+        sha1="6addaba208e21c6da776d0ca75b6b23a6ccd5499">
+        <dex dex="D:\sdk\iPtv\app\build\intermediates\pre-dexed\debug\classes_0f2e37af0da2ee046390b1caeb350077ca94f2e0.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\SajjadJaved\.android\build-cache\d070d9df36103591bf696bd2ce67d044e69c8229\output\jars\classes.jar"
+        jar="C:\Users\SajjadJaved\.android\build-cache\a96be702b07d479c6bebd2d03eab6950fb1fc46e\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
-        sha1="ce9112e08a027c8620ae693983e38cdbb9f6371b">
-        <dex dex="D:\sdk\iPtv\app\build\intermediates\pre-dexed\debug\classes_60038bd7c6cd8353cfbf1fbe025b8f8d28ba7fbb.jar" />
+        sha1="eb0d830e3eabb9deb9ec44869cf7ac7ea1ad794c">
+        <dex dex="D:\sdk\iPtv\app\build\intermediates\pre-dexed\debug\classes_7922aa578f47d771cba9b593aa22d3bc9d157e18.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\SajjadJaved\.android\build-cache\b253a9128828ba6aeb5d6aa9104cfe0646f47f2d\output\jars\classes.jar"
+        jar="C:\Users\SajjadJaved\.android\build-cache\e0e12d4908ef6de554deba09bf40d421b113a9e4\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
-        sha1="3d6951cb416ebf8c66a32b9480808ca247b68344">
-        <dex dex="D:\sdk\iPtv\app\build\intermediates\pre-dexed\debug\classes_8be9689c661ef5d48e3c68bbcb8bd70a7da65709.jar" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\SajjadJaved\.android\build-cache\b253a9128828ba6aeb5d6aa9104cfe0646f47f2d\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="3d6951cb416ebf8c66a32b9480808ca247b68344">
-        <dex dex="D:\sdk\iPtv\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_8be9689c661ef5d48e3c68bbcb8bd70a7da65709\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\SajjadJaved\.android\build-cache\d070d9df36103591bf696bd2ce67d044e69c8229\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="ce9112e08a027c8620ae693983e38cdbb9f6371b">
-        <dex dex="D:\sdk\iPtv\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_60038bd7c6cd8353cfbf1fbe025b8f8d28ba7fbb\classes.dex" />
+        sha1="756f6297eef79784f5e356dcd4f39865028b2bd0">
+        <dex dex="D:\sdk\iPtv\app\build\intermediates\pre-dexed\debug\classes_6fbfbd40f7e600de7cd85c1ebd912af45978237f.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\SajjadJaved\.android\build-cache\02221ddd917962766a4d6d08630e46865940ef49\output\jars\classes.jar"
+        jar="C:\Users\SajjadJaved\.android\build-cache\bfcb03e895d3871f3b850f7cfad207c05da5ccd7\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
-        sha1="95519720620b553f63afc789beba9ad582807f7c">
-        <dex dex="D:\sdk\iPtv\app\build\intermediates\pre-dexed\debug\classes_990aa47d695005757a483c04da35eb96a62639b5.jar" />
+        sha1="541a2ad68dc68aa49795821f8280b7624e6a0c9b">
+        <dex dex="D:\sdk\iPtv\app\build\intermediates\pre-dexed\debug\classes_fd9a7689e750b46a3f2a5c0f3ec4db67f7c5f0c3.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\SajjadJaved\.android\build-cache\e253bf265a0a59d515596014ccfefea9518424b4\output\jars\classes.jar"
+        jar="C:\Users\SajjadJaved\.android\build-cache\c8ac0aca18b2dd1b6d04a18916085871eba102a3\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
-        sha1="38789e20ace9ab7dbd00554bd2673ab424478d3b">
-        <dex dex="D:\sdk\iPtv\app\build\intermediates\pre-dexed\debug\classes_8abd0ad041521fcdf89f8484dfb93814ee24c52f.jar" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\SajjadJaved\.android\build-cache\ee908714bc5c222aee54014626758de29b7ef4c3\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
-        <dex dex="D:\sdk\iPtv\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_d6fc723cc7c43684889d2bd4258448b81d24830d\classes.dex" />
+        sha1="486371f97baad8e607f332f20fee1d3dd00a731a">
+        <dex dex="D:\sdk\iPtv\app\build\intermediates\pre-dexed\debug\classes_bea8acc0d2e70b594c3c383151d35800625bab21.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\SajjadJaved\.android\build-cache\d64e6b3d0f74ffdebd0e459fe73ab944e4c34472\output\jars\classes.jar"
+        jar="C:\Users\SajjadJaved\.android\build-cache\ad5de05c08497b0235fb744e5dc8da2f5686bc35\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
-        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
-        <dex dex="D:\sdk\iPtv\app\build\intermediates\pre-dexed\debug\classes_7a7590e8028d445d2473c0ba2fe3649e87a504a3.jar" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\SajjadJaved\.android\build-cache\2f19f5f2d468b0f10b3f6b42d0c5550894835808\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
-        <dex dex="D:\sdk\iPtv\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_901a55d04d1c7ef4a062ad3f4dd27de74377ca17\classes.dex" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\SajjadJaved\.android\build-cache\2f19f5f2d468b0f10b3f6b42d0c5550894835808\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
-        <dex dex="D:\sdk\iPtv\app\build\intermediates\pre-dexed\debug\classes_901a55d04d1c7ef4a062ad3f4dd27de74377ca17.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\SajjadJaved\.android\build-cache\4ac5c6cb49c13b63ee72708b1f267bfc7592ea3e\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
-        <dex dex="D:\sdk\iPtv\app\build\intermediates\pre-dexed\debug\classes_70151256333e4fa7f3e62d2d37c1393f0ea38c41.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\SajjadJaved\.android\build-cache\79e0851675856d0050b09e464e97da79025d15c7\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="1ac56e5801e986583cbe27f2cce57f626cc7ff93">
-        <dex dex="D:\sdk\iPtv\app\build\intermediates\pre-dexed\debug\classes_48322f4efcc9198ece2597e3749983b97099be19.jar" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\sdk\extras\android\m2repository\com\android\support\support-annotations\25.3.1\support-annotations-25.3.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
-        <dex dex="D:\sdk\iPtv\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.3.1_cfa7e4f6acdbb5a37cc4fde833ccf160c11355f4\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\SajjadJaved\.android\build-cache\79e0851675856d0050b09e464e97da79025d15c7\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="1ac56e5801e986583cbe27f2cce57f626cc7ff93">
-        <dex dex="D:\sdk\iPtv\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_48322f4efcc9198ece2597e3749983b97099be19\classes.dex" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\SajjadJaved\.android\build-cache\8f416d7b7c24c0544c444647257e426409233fff\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="a61e7010aa7be5da53cd1bc5279630510c9a4912">
-        <dex dex="D:\sdk\iPtv\app\build\intermediates\pre-dexed\debug\classes_9276c54e0d3ecb4a294d91cd79079ddd87687806.jar" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\SajjadJaved\.android\build-cache\d29025f737d06dfe3794205529d1cb23aa54c204\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="d4cf6227dd6a2ceff0f7dcf0c324380b7abf2c28">
-        <dex dex="D:\sdk\iPtv\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_5023e2659078098f10111a478780709ce410c0c5\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\SajjadJaved\.android\build-cache\57b907a2ffcb760ee00dccacce523ba277d83b56\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
-        <dex dex="D:\sdk\iPtv\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_556b820cebd248f660279845061f22b3744d499e\classes.dex" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\SajjadJaved\.android\build-cache\d29025f737d06dfe3794205529d1cb23aa54c204\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="d4cf6227dd6a2ceff0f7dcf0c324380b7abf2c28">
-        <dex dex="D:\sdk\iPtv\app\build\intermediates\pre-dexed\debug\classes_5023e2659078098f10111a478780709ce410c0c5.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\SajjadJaved\.android\build-cache\57b907a2ffcb760ee00dccacce523ba277d83b56\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
-        <dex dex="D:\sdk\iPtv\app\build\intermediates\pre-dexed\debug\classes_556b820cebd248f660279845061f22b3744d499e.jar" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\SajjadJaved\.android\build-cache\4ac5c6cb49c13b63ee72708b1f267bfc7592ea3e\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
-        <dex dex="D:\sdk\iPtv\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_70151256333e4fa7f3e62d2d37c1393f0ea38c41\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\SajjadJaved\.android\build-cache\8f416d7b7c24c0544c444647257e426409233fff\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="a61e7010aa7be5da53cd1bc5279630510c9a4912">
-        <dex dex="D:\sdk\iPtv\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_9276c54e0d3ecb4a294d91cd79079ddd87687806\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\SajjadJaved\.android\build-cache\d64e6b3d0f74ffdebd0e459fe73ab944e4c34472\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
-        <dex dex="D:\sdk\iPtv\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_7a7590e8028d445d2473c0ba2fe3649e87a504a3\classes.dex" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\SajjadJaved\.android\build-cache\3e3cf2c9180b1e61742f0f9198d9650958ae5d0b\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="0d5cbbbfe040201c7569478b70a13b58fd11aab4">
-        <dex dex="D:\sdk\iPtv\app\build\intermediates\pre-dexed\debug\classes_36d0c43951e89e9b2fba7bf44d2f1ec0296d90c9.jar" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\SajjadJaved\.android\build-cache\e253bf265a0a59d515596014ccfefea9518424b4\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="38789e20ace9ab7dbd00554bd2673ab424478d3b">
-        <dex dex="D:\sdk\iPtv\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_8abd0ad041521fcdf89f8484dfb93814ee24c52f\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\SajjadJaved\.android\build-cache\3e3cf2c9180b1e61742f0f9198d9650958ae5d0b\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="0d5cbbbfe040201c7569478b70a13b58fd11aab4">
-        <dex dex="D:\sdk\iPtv\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_36d0c43951e89e9b2fba7bf44d2f1ec0296d90c9\classes.dex" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\SajjadJaved\.android\build-cache\2cbe95d9f815ed504cb9162f51d9cde4775b11aa\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="D:\sdk\iPtv\app\build\intermediates\pre-dexed\debug\classes_1c9300542a6d256369debc1916e053007411c331.jar" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\SajjadJaved\.android\build-cache\2cbe95d9f815ed504cb9162f51d9cde4775b11aa\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="D:\sdk\iPtv\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_1c9300542a6d256369debc1916e053007411c331\classes.dex" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\sdk\extras\android\m2repository\com\android\support\support-annotations\25.3.1\support-annotations-25.3.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
-        <dex dex="D:\sdk\iPtv\app\build\intermediates\pre-dexed\debug\support-annotations-25.3.1_cfa7e4f6acdbb5a37cc4fde833ccf160c11355f4.jar" />
+        sha1="e9802780a84ecf2063968c1da84f9e65191717dc">
+        <dex dex="D:\sdk\iPtv\app\build\intermediates\pre-dexed\debug\classes_3f01d7559c829ee460bf30daa61d002e0fd5238d.jar" />
     </item>
     <item
         is-multidex="true"
@@ -295,71 +70,53 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="c82741bc129dd5f99f11a4ab8666ae24262053b6">
+        sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
         <dex dex="D:\sdk\iPtv\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_8632463d48b52f8d398fbb30997c681e384dfdb7\classes.dex" />
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\SajjadJaved\.android\build-cache\c28c99a7dd227adc0f4e3182cf6c2dbd19c37963\output\jars\classes.jar"
+        jar="C:\Users\SajjadJaved\.android\build-cache\01781f580aa211ccaba8c3d795223d4e21811f66\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
-        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
-        <dex dex="D:\sdk\iPtv\app\build\intermediates\pre-dexed\debug\classes_aae179a3b47b1b8fb83b813ed81d24164ae4463a.jar" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\SajjadJaved\.android\build-cache\02221ddd917962766a4d6d08630e46865940ef49\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="95519720620b553f63afc789beba9ad582807f7c">
-        <dex dex="D:\sdk\iPtv\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_990aa47d695005757a483c04da35eb96a62639b5\classes.dex" />
+        sha1="152fd75220b7096ba098ba13224be2523d1276a9">
+        <dex dex="D:\sdk\iPtv\app\build\intermediates\pre-dexed\debug\classes_07678d1b8c519c4ff9bec03efc2ec0c653f2a598.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\SajjadJaved\.android\build-cache\49477e2247e88dd019566fe52b16a0a46817c7e9\output\jars\classes.jar"
+        jar="C:\Users\SajjadJaved\.android\build-cache\726a2f610b5e35a41d1d4015c0a2ac11f388349e\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
-        sha1="bd75f9f0296fe220da6d0ad961831b04541c4452">
-        <dex dex="D:\sdk\iPtv\app\build\intermediates\pre-dexed\debug\classes_f7f6bab5d1cabf2674ba676001879e6260165fd8.jar" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\SajjadJaved\.android\build-cache\c28c99a7dd227adc0f4e3182cf6c2dbd19c37963\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
-        <dex dex="D:\sdk\iPtv\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_aae179a3b47b1b8fb83b813ed81d24164ae4463a\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\SajjadJaved\.android\build-cache\49477e2247e88dd019566fe52b16a0a46817c7e9\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="bd75f9f0296fe220da6d0ad961831b04541c4452">
-        <dex dex="D:\sdk\iPtv\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_f7f6bab5d1cabf2674ba676001879e6260165fd8\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\SajjadJaved\.android\build-cache\f0def06de817799caa7bb446f153226fd5808f00\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
-        <dex dex="D:\sdk\iPtv\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_e91ca2245a37b3338baa4fb7ae084ca9c162c6e2\classes.dex" />
+        sha1="de29a39f9260f88151b1ef453140e71c76b6c415">
+        <dex dex="D:\sdk\iPtv\app\build\intermediates\pre-dexed\debug\classes_c24b3a2a80533d2462653dbc7f85174a56542b05.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\SajjadJaved\.android\build-cache\f0def06de817799caa7bb446f153226fd5808f00\output\jars\classes.jar"
+        jar="C:\Users\SajjadJaved\.android\build-cache\243b645e605501fc9d059c17ed400263a40cd9b6\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
-        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
-        <dex dex="D:\sdk\iPtv\app\build\intermediates\pre-dexed\debug\classes_e91ca2245a37b3338baa4fb7ae084ca9c162c6e2.jar" />
+        sha1="6116e0e7069de7fc259aac8e08b84f32c2038231">
+        <dex dex="D:\sdk\iPtv\app\build\intermediates\pre-dexed\debug\classes_8d63450ac801632a8fdcbb1cdec3aca2e2f47a65.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\sdk\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.0-alpha7\constraint-layout-solver-1.0.0-alpha7.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="439eeb5ffd54cbd18db0a6aea471e8356f19fc36">
+        <dex dex="D:\sdk\iPtv\app\build\intermediates\pre-dexed\debug\constraint-layout-solver-1.0.0-alpha7_dab63ef41dc161e1080884e166ff043de1f17373.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\SajjadJaved\.android\build-cache\3cfd7b388f5b623bc128db7ded96ae7e7f8ca07b\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="433f4d6aa5f21f19552afe0e6c5eff0fedba73ad">
+        <dex dex="D:\sdk\iPtv\app\build\intermediates\pre-dexed\debug\classes_265df74515188af6f4cd9951ec89e046bc691907.jar" />
     </item>
 
 </items>

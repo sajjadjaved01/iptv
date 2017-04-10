@@ -25,7 +25,7 @@ public class About extends AppCompatActivity {
         cB();
 
         TextView txtVer = (TextView) findViewById(R.id.txtver);
-        txtVer.setText("Version: " + vercode + "\n" +
+        txtVer.setText("                                  Version: " + vercode + "\n" +
                 "LoggedIn As: " + prefs.getString("id", null) + "\n" +
                 "DevelopedBy: Sj&SUSLink☺" + "\n" +
                 "LastBuild: " + last
