@@ -4,3 +4,7 @@ Select an Channel to play.
 Channel list is Obtained from List Provided.
 Reading M3U / M3U8 file & displaying Channels.
 * For Updates Stay Tuned
+
+ Future Updates
+- [ ] Exo Player & MxPlayer
+- [ ] Screen Cast
