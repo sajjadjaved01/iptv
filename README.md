@@ -3,8 +3,10 @@ Android project for live streaming. With this app we can fetch channels from lin
 Select an Channel to play.
 Channel list is Obtained from List Provided.
 Reading M3U / M3U8 file & displaying Channels.
-* For Updates Stay Tuned
 
- Future Updates
+
+![project maintained](https://img.shields.io/badge/Project-Maintained-green.svg)
+
+* Future Updates
 - [ ] Exo Player & MxPlayer
 - [ ] Screen Cast
