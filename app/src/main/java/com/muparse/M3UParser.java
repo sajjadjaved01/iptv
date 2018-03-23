@@ -1,5 +1,7 @@
 package com.muparse;
 
+import android.util.Log;
+
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -54,10 +56,14 @@ public class M3UParser {
                     playlistItem.setItemDuration(duration);
                     playlistItem.setItemIcon("");
                 }
-                String name = dataArray[1].substring(0, dataArray[1].indexOf(EXT_URL)).replace("\n", "");
-                String url = dataArray[1].substring(dataArray[1].indexOf(EXT_URL)).replace("\n", "").replace("\r", "");
-                playlistItem.setItemName(name);
-                playlistItem.setItemUrl(url);
+                try {
+                    String url = dataArray[1].substring(dataArray[1].indexOf(EXT_URL)).replace("\n", "").replace("\r", "");
+                    String name = dataArray[1].substring(0, dataArray[1].indexOf(EXT_URL)).replace("\n", "");
+                    playlistItem.setItemName(name);
+                    playlistItem.setItemUrl(url);
+                } catch (Exception fdfd) {
+                    Log.e("Google", "Error: " + fdfd.fillInStackTrace());
+                }
                 playlistItems.add(playlistItem);
             }
         }

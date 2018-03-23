@@ -1,9 +1,10 @@
 package com.muparse;
 
+import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
@@ -17,24 +18,33 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 import static com.muparse.Login.filepath;
 
 
-public class MainActivity extends AppCompatActivity implements SearchView.OnQueryTextListener{
+public class MainActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
 
     final M3UParser parser = new M3UParser();
+    ProgressBar spinner;
     TextView mPlaylistParams;
     RecyclerView mPlaylistList;
     InputStream is;
     PlaylistAdapter mAdapter;
     SharedPreferences.Editor editor;
+    ArrayList<HashMap<String, String>> contactList = new ArrayList<>();
+    private String TAG = MainActivity.class.getSimpleName();
     private android.app.AlertDialog mBrowser = null;
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
@@ -42,47 +52,35 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mPlaylistParams = (TextView) findViewById(R.id.playlist_params);
-        mPlaylistList = (RecyclerView) findViewById(R.id.playlist_recycler);
+        mPlaylistParams = findViewById(R.id.playlist_params);
+        mPlaylistList = findViewById(R.id.playlist_recycler);
+        spinner = findViewById(R.id.login_progress);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         mPlaylistList.setLayoutManager(layoutManager);
         mAdapter = new PlaylistAdapter(this);
         mPlaylistList.setAdapter(mAdapter);
-        loader(filepath.getPath());
+//        loader(filepath.getPath());
+        new _loadFile().execute(filepath.getPath()); // this will read direct channels from url
+        new GetJson().execute(); // this is getting info about User, channels etc.
     }
 
     void loader(String name) {
 
         try { //new FileInputStream (new File(name)
-            is = new FileInputStream(new File(name)); // if u r trying to open file from asstes InputStream is = getassets.open(); InputStream
+            is = getAssets().open("data.db"); // if u r trying to open file from asstes InputStream is = getassets.open(); InputStream
             M3UPlaylist playlist = parser.parseFile(is);
             mAdapter.update(playlist.getPlaylistItems());
         } catch (Exception e) {
-            Log.d("Google",""+e.toString());
-        }
-    }
-
-    public boolean isPackageInstalled(PackageManager packageManager) {
-        try {
-            packageManager.getPackageInfo("com.mxtech.videoplayer.ad", PackageManager.GET_ACTIVITIES);
-            return true;
-        } catch (PackageManager.NameNotFoundException e) {
-            return false;
+            Log.d("Google", "" + e.toString());
         }
     }
 
     protected void onResume() {
         super.onResume();
-        boolean isAccess = isLoggedIn();
+        boolean isAccess = PreferencesManager.getBoolean(this, "isLogged", false);
         if (!isAccess) {
-            Intent intent = new Intent(getApplicationContext(), Login.class);
-            startActivity(intent);
+            startActivity(new Intent(MainActivity.this, Login.class));
         }
-    }
-
-    boolean isLoggedIn() {
-        SharedPreferences prefs = getSharedPreferences("MyPrefs", MODE_PRIVATE);
-        return prefs.getBoolean("isLogged", false);
     }
 
     @Override
@@ -95,19 +93,17 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                return false;
+                return filter(query);
             }
 
             @Override
             public boolean onQueryTextChange(final String newText) {
                 //TODO here changes the search text)
-                mAdapter.getFilter().filter(newText);
-                return true;
+                return filter(newText);
             }
         });
         return true;
     }
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -122,6 +118,10 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
                 Intent intent = new Intent(getApplicationContext(), Login.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
+                finish();
+                break;
+            case R.id.moreInfo:
+                new GetJson().execute();
                 break;
             case R.id.browse:
                 browser();
@@ -139,38 +139,160 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
 
     private void browser() {
         if (mBrowser == null) {
-            mBrowser = FileBrowser.createFileBrowser(this,new FileBrowser.OnFileSelectedListener(){
+            mBrowser = FileBrowser.createFileBrowser(this, new FileBrowser.OnFileSelectedListener() {
 
                 @Override
                 public void onFileSelected(String path) {
                     if (mBrowser != null && mBrowser.isShowing()) {
-                        try{
-                            is = new FileInputStream(new File(path));
-                            M3UPlaylist playlist = parser.parseFile(is);
-                            mAdapter.update(playlist.getPlaylistItems());
-                            mBrowser.dismiss();
-                        }catch (Exception ignored){}
+                        new _loadFile().execute(path);
+                        mBrowser.dismiss();
                     }
-
                 }
             });
             mBrowser.setOnDismissListener(new DialogInterface.OnDismissListener() {
                 @Override
                 public void onDismiss(DialogInterface dialog) {
-                    Toast.makeText(MainActivity.this, "Nothing selected", Toast.LENGTH_SHORT).show();
                 }
             });
         }
         mBrowser.show();
     }
 
+    private boolean filter(final String newText) {
+        if (mAdapter != null) {
+            if (newText.isEmpty()) {
+                new _loadFile().execute(filepath.getPath());
+            } else {
+                mAdapter.getFilter().filter(newText);
+            }
+            return true;
+        } else {
+            loader(filepath.getPath());
+            return false;
+        }
+    }
+
     @Override
     public boolean onQueryTextSubmit(String query) {
-        return false;
+        return filter(query);
     }
 
     @Override
     public boolean onQueryTextChange(String newText) {
-        return false;
+        return filter(newText);
+    }
+
+    // Getting More Info about provided Line
+    class GetJson extends AsyncTask<Void, Void, Void> {
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+
+            HttpHandler hh = new HttpHandler();
+            String url = "http://stb.spades-tv.xyz:25461/player_api.php?username=MikeA&password=Arcato";
+            String jsonStr = hh.makeServiceCall(url);
+            Log.i(TAG, "Response from url: " + jsonStr);
+            if (jsonStr != null) {
+                try {
+                    JSONObject usrObj = new JSONObject(jsonStr);
+                    //BsSF*{mR[NBW
+                    //sajjadja_ved buhql0n33nfa
+                    // looping through All Info
+                    for (int i = 0; i < usrObj.length(); i++) {
+
+                        // Getting All info about User
+                        JSONObject c = usrObj.getJSONObject("user_info");
+                        String username = c.getString("username");
+                        String passwd = c.getString("password");
+                        String msg = c.getString("message");
+                        String auth = c.getString("auth");
+                        String status = c.getString("status");
+                        String exp = c.getString("exp_date");
+                        String is_trial = c.getString("is_trial");
+                        String activeCon = c.getString("active_cons");
+                        String createdat = c.getString("created_at");
+                        String max_connections = c.getString("max_connections");
+
+                        // Getting Array
+                        JSONArray phone = c.getJSONArray("allowed_output_formats");
+                        String ph1 = phone.getString(0);
+                        String ph2 = phone.getString(1);
+                        String ph3 = phone.getString(2);
+
+                        // Getting Server Info
+                        JSONObject serverObj = usrObj.getJSONObject("server_info");
+                        String servUrl = serverObj.getString("url");
+                        String servPort = serverObj.getString("port");
+                        String servRtmp = serverObj.getString("rtmp_port");
+                        String servZone = serverObj.getString("timezone");
+
+                        // adding each child node to HashMap key => value
+                        HashMap<String, String> contact = new HashMap<>();
+                        contact.put("username", username);
+                        contact.put("mobile", ph1 + ", " + ph2);
+                        contact.put("passwd", passwd);
+                        contact.put("msg", msg);
+                        contact.put("auth", auth);
+                        contact.put("status", status);
+                        contact.put("exp", exp);
+                        contact.put("isTrial", is_trial);
+                        contact.put("activeCon", activeCon);
+                        contact.put("createdAt", createdat);
+                        contact.put("maxConn", max_connections);
+
+                        // adding contact to contact list
+                        contactList.add(contact);
+                    }
+                } catch (final Exception e) {
+                    Log.e(TAG, "Json parsing error: " + e.toString());
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(getApplicationContext(),
+                                    "Json parsing error: " + e.getMessage(),
+                                    Toast.LENGTH_LONG).show();
+                        }
+                    });
+                }
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+            String ff = String.valueOf(contactList.get(1));
+            Log.e(TAG, String.valueOf(contactList.get(1)));
+            Toast.makeText(getApplicationContext(), ff, Toast.LENGTH_LONG).show();
+        }
+    }
+
+    @SuppressLint("StaticFieldLeak")
+    class _loadFile extends AsyncTask<String, Void, Boolean> {
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            spinner.setVisibility(View.VISIBLE);
+        }
+
+        @Override
+        protected Boolean doInBackground(String... strings) {
+            try { //new FileInputStream (new File(name)
+                is = new FileInputStream(new File(strings[0])); // if u r trying to open file from asstes InputStream is = getassets.open(); InputStream
+                M3UPlaylist playlist = parser.parseFile(is);
+                mAdapter.update(playlist.getPlaylistItems());
+                return true;
+            } catch (Exception e) {
+                Log.d("Google", "_loadFile: " + e.toString());
+                return false;
+            }
+        }
+
+        @Override
+        protected void onPostExecute(Boolean aBoolean) {
+            super.onPostExecute(aBoolean);
+            spinner.setVisibility(View.GONE);
+        }
     }
 }

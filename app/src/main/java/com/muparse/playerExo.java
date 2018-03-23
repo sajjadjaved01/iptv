@@ -1,22 +1,21 @@
 package com.muparse;
 
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
 
 import com.devbrackets.android.exomedia.listener.OnPreparedListener;
-import com.devbrackets.android.exomedia.ui.widget.EMVideoView;
+import com.devbrackets.android.exomedia.ui.widget.VideoView;
 
 public class playerExo extends AppCompatActivity {
 
-    EMVideoView emVideoView;
+    VideoView emVideoView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_player_exo);
 
-        emVideoView = (EMVideoView) findViewById(R.id.video_view);
+        emVideoView = findViewById(R.id.video_view);
         try{
             emVideoView.setOnPreparedListener(new OnPreparedListener() {
                 @Override
@@ -25,6 +24,7 @@ public class playerExo extends AppCompatActivity {
                     emVideoView.start();
                 }
             });
-        }catch (Exception e){ Log.d("Google",""+e.toString()); }
+        } catch (Exception ignored) {
+        }
     }
 }

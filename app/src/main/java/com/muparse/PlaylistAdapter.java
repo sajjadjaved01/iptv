@@ -10,30 +10,22 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
-import android.os.AsyncTask;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
-import android.widget.ListAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.firebase.analytics.FirebaseAnalytics;
+import com.amulyakhare.textdrawable.TextDrawable;
+import com.amulyakhare.textdrawable.util.ColorGenerator;
 import com.squareup.picasso.Picasso;
 
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,8 +33,9 @@ public class PlaylistAdapter extends RecyclerView.Adapter<PlaylistAdapter.ItemHo
 
     private final Context mContext;
     private final LayoutInflater mInflater;
-    private final MainActivity min = new MainActivity();
     private List<M3UItem> mItem = new ArrayList<>();
+    private TextDrawable textDrawable;
+    private ColorGenerator generator = ColorGenerator.MATERIAL;
 
     public PlaylistAdapter(Context c) {
         mContext = c;
@@ -111,7 +104,7 @@ public class PlaylistAdapter extends RecyclerView.Adapter<PlaylistAdapter.ItemHo
     public class ItemHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         final PackageManager pm = mContext.getPackageManager();
-        final boolean isApp = min.isPackageInstalled(pm);
+        final boolean isApp = Utils.getInstance().isPackageInstalled(pm);
         TextView name;
         ImageView cImg;
 
@@ -125,8 +118,22 @@ public class PlaylistAdapter extends RecyclerView.Adapter<PlaylistAdapter.ItemHo
         void update(final M3UItem item) {
             try {
             name.setText(item.getItemName());
-            Picasso.with(mContext).load(item.getItemIcon()).into(cImg);
-            }catch (Exception ignored){}
+                int color = generator.getRandomColor();
+                if (item.getItemIcon().isEmpty()) {
+                    textDrawable = TextDrawable.builder()
+                            .buildRoundRect(String.valueOf(item.getItemName().charAt(0)), color, 100);
+                    cImg.setImageDrawable(textDrawable);
+                } else {
+                    if (Utils.getInstance().isNetworkAvailable(mContext)) {
+                        Picasso.with(mContext).load(item.getItemIcon()).into(cImg);
+                    } else {
+                        textDrawable = TextDrawable.builder()
+                                .buildRoundRect(String.valueOf(item.getItemName().charAt(0)), color, 100);
+                        cImg.setImageDrawable(textDrawable);
+                    }
+                }
+            } catch (Exception ignored) {
+            }
         }
 
         public void onClick(View v) {

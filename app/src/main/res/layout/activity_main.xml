@@ -5,6 +5,14 @@
     android:layout_height="match_parent"
     android:background="@android:color/white">
 
+        <ProgressBar
+            android:id="@+id/login_progress"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone" />
+
         <TextView
             android:id="@+id/playlist_params"
             android:layout_width="wrap_content"
@@ -17,8 +25,9 @@
             android:id="@+id/playlist_recycler"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="10dp"
-            android:scrollbarSize="20dp" />
+            android:paddingTop="10dp"
+            android:scrollbarSize="40dp"
+            android:scrollbarStyle="insideOverlay" />
 
 
 </RelativeLayout>

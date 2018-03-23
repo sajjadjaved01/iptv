@@ -34,7 +34,6 @@
             android:label="@string/about"
             android:parentActivityName=".MainActivity" />
         <activity android:name=".playerExo" />
-        <activity android:name=".searchActivity"></activity>
     </application>
 
 </manifest>

@@ -2,7 +2,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:EMVideoView="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal">
 
     <ImageView
@@ -10,8 +9,7 @@
         android:layout_width="50sp"
         android:layout_height="50sp"
         android:layout_marginStart="10sp"
-        android:contentDescription="@string/browse"
-        android:src="@drawable/ic_dir" />
+        android:contentDescription="@string/browse" />
 
         <TextView
             android:id="@+id/item_name"
