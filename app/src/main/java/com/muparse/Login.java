@@ -209,7 +209,7 @@ public class Login extends AppCompatActivity {
                 editor.putString("id", mEmailView.getText().toString());
                 editor.putBoolean("isLogged", true);
                 editor.apply();
-                new DwnloadFileFromUrl().execute(urlLink);
+                new DwnloadFileFromUrl().execute(domain + "/get.php?username=" + mEmailView.getText() + "&password=" + mPasswordView.getText() + "&type=m3u&output=ts");
                 Utils.getInstance().Snack(Login.this, "Loading channels...", findViewById(R.id.activity_login));
             } else {
                 spinner.setVisibility(View.GONE);
