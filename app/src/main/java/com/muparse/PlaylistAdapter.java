@@ -13,6 +13,7 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -111,8 +112,8 @@ public class PlaylistAdapter extends RecyclerView.Adapter<PlaylistAdapter.ItemHo
         ItemHolder(View view) {
             super(view);
             view.setOnClickListener(this);
-            name = (TextView) view.findViewById(R.id.item_name);
-            cImg = (ImageView) view.findViewById(R.id.cimg);
+            name = view.findViewById(R.id.item_name);
+            cImg = view.findViewById(R.id.cimg);
         }
 
         void update(final M3UItem item) {
@@ -140,11 +141,16 @@ public class PlaylistAdapter extends RecyclerView.Adapter<PlaylistAdapter.ItemHo
             try {
                 int position = getLayoutPosition();
                 final M3UItem imm = mItem.get(position);
-                if (isApp) { //isApplicationInstalled
-                    playy(imm.getItemUrl(), imm.getItemName());
-                } else { // isApplicationNotFound
-                    playerNotFound(mContext,"iPtv","Player not found. Install MX Player.");
-                }
+//                if (isApp) { //isApplicationInstalled
+//                    playy(imm.getItemUrl(), imm.getItemName());
+//                } else { // isApplicationNotFound
+//                    playerNotFound(mContext,"iPtv","Player not found. Install MX Player.");
+//                }
+                Intent intent = new Intent(mContext, playerExo.class);
+                intent.putExtra("Name", imm.getItemName());
+                intent.putExtra("Url", imm.getItemUrl());
+                Log.e("Google", imm.getItemUrl());
+                mContext.startActivity(intent);
             } catch (Exception ignored) {}
         }
 

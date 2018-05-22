@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         mPlaylistList.setAdapter(mAdapter);
 //        loader(filepath.getPath());
         new _loadFile().execute(filepath.getPath()); // this will read direct channels from url
-        new GetJson().execute(); // this is getting info about User, channels etc.
+        //new GetJson().execute(); // this is getting info about User, channels etc.
     }
 
     void loader(String name) {

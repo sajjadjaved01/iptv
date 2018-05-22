@@ -43,12 +43,12 @@ android {
         implementation 'com.android.support:support-v4:27.1.1'
         implementation 'com.android.support:design:27.1.1'
         implementation 'com.android.support:leanback-v17:27.1.1'
-        implementation 'com.google.firebase:firebase-core:15.0.0'
+        implementation 'com.google.firebase:firebase-core:12.0.1'
         implementation 'com.squareup.picasso:picasso:2.5.2'
         implementation 'com.amulyakhare:com.amulyakhare.textdrawable:1.0.1'
-        implementation 'com.devbrackets.android:exomedia:4.1.0'
+        implementation 'com.devbrackets.android:exomedia:4.2.0'
         implementation 'com.android.support.constraint:constraint-layout:1.1.0'
-        implementation 'com.google.firebase:firebase-crash:15.0.0'
+        implementation 'com.google.firebase:firebase-crash:12.0.1'
         implementation 'com.squareup.okhttp3:okhttp:3.10.0'
     }
 }

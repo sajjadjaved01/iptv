@@ -36,7 +36,8 @@ public class Login extends AppCompatActivity {
     public static final File dir = new File(DEFA.getPath() + "/Netuptv");
     static final File filepath = new File(dir.getPath() + "/data.m3u");
     private static Login instance = null;
-    public final String urlLink = "Enter your URL here";
+    public final String urlLink = " http://portal.simiptv.com:8001/get.php?username=LrWQISrOq0&password=7i5Qdtmunn&type=m3u&output=ts";
+    public final String domain = " http://portal.simiptv.com:8001";
     FirebaseAnalytics firebaseAnalytics;
     SharedPreferences.Editor editor;
     private EditText mEmailView;
@@ -146,7 +147,7 @@ public class Login extends AppCompatActivity {
             // There was an error; don't attempt login and focus the first form field with an error.
             focusView.requestFocus();
         } else {
-            new _checkNetworkAvailable().execute(urlLink);
+            new _checkNetworkAvailable().execute(domain + "/get.php?username=" + mEmailView.getText() + "&password=" + mPasswordView.getText() + "&type=m3u&output=ts");
         }
     }
 
