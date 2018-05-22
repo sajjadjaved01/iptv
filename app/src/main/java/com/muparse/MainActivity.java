@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     ArrayList<HashMap<String, String>> contactList = new ArrayList<>();
     private String TAG = MainActivity.class.getSimpleName();
     private android.app.AlertDialog mBrowser = null;
+    private String url = Login.getInstance().urlLink;
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
@@ -189,7 +190,6 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         protected Void doInBackground(Void... voids) {
 
             HttpHandler hh = new HttpHandler();
-            String url = "http://stb.spades-tv.xyz:25461/player_api.php?username=MikeA&password=Arcato";
             String jsonStr = hh.makeServiceCall(url);
             Log.i(TAG, "Response from url: " + jsonStr);
             if (jsonStr != null) {

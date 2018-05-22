@@ -11,11 +11,11 @@ android {
             keyAlias 'key0'
         }
     }
-    compileSdkVersion 26
+    compileSdkVersion 27
     defaultConfig {
         applicationId "com.muparse"
         minSdkVersion 17
-        targetSdkVersion 26
+        targetSdkVersion 27
         versionCode 1
         versionName "1.2"
         signingConfig signingConfigs.config
@@ -38,17 +38,17 @@ android {
     dependencies {
         implementation fileTree(dir: 'libs', include: ['*.jar'])
         //noinspection GradleCompatible
-        implementation 'com.android.support:appcompat-v7:26.1.0'
-        implementation 'com.android.support:recyclerview-v7:26.1.0'
-        implementation 'com.android.support:support-v4:26.1.0'
-        implementation 'com.android.support:design:26.1.0'
-        implementation 'com.android.support:leanback-v17:26.1.0'
-        implementation 'com.google.firebase:firebase-core:11.8.0'
+        implementation 'com.android.support:appcompat-v7:27.1.1'
+        implementation 'com.android.support:recyclerview-v7:27.1.1'
+        implementation 'com.android.support:support-v4:27.1.1'
+        implementation 'com.android.support:design:27.1.1'
+        implementation 'com.android.support:leanback-v17:27.1.1'
+        implementation 'com.google.firebase:firebase-core:15.0.0'
         implementation 'com.squareup.picasso:picasso:2.5.2'
         implementation 'com.amulyakhare:com.amulyakhare.textdrawable:1.0.1'
         implementation 'com.devbrackets.android:exomedia:4.1.0'
-        implementation 'com.android.support.constraint:constraint-layout:1.1.0-beta5'
-        implementation 'com.google.firebase:firebase-crash:11.8.0'
+        implementation 'com.android.support.constraint:constraint-layout:1.1.0'
+        implementation 'com.google.firebase:firebase-crash:15.0.0'
         implementation 'com.squareup.okhttp3:okhttp:3.10.0'
     }
 }
@@ -57,5 +57,5 @@ repositories {
     mavenCentral()
 }
 dependencies {
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }

@@ -16,7 +16,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.firebase.analytics.FirebaseAnalytics;
 
@@ -37,7 +36,7 @@ public class Login extends AppCompatActivity {
     public static final File dir = new File(DEFA.getPath() + "/Netuptv");
     static final File filepath = new File(dir.getPath() + "/data.m3u");
     private static Login instance = null;
-    public final String urlLink = "http://ip.stacbox.org:83/get.php?username=Spades&password=Arcato&type=m3u&output=ts";
+    public final String urlLink = "Enter your URL here";
     FirebaseAnalytics firebaseAnalytics;
     SharedPreferences.Editor editor;
     private EditText mEmailView;
@@ -104,7 +103,7 @@ public class Login extends AppCompatActivity {
                         dir.mkdir();
                     }
                 } else {
-                    Toast.makeText(this, "Permission denied", Toast.LENGTH_SHORT).show();
+                    Utils.getInstance().Snack(this, "Permission denied", findViewById(R.id.activity_login));
                     ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 1);
                 }
                 return;
@@ -210,7 +209,7 @@ public class Login extends AppCompatActivity {
                 editor.putBoolean("isLogged", true);
                 editor.apply();
                 new DwnloadFileFromUrl().execute(urlLink);
-                Toast.makeText(Login.this, "Getting channels from provider", Toast.LENGTH_SHORT).show();
+                Utils.getInstance().Snack(Login.this, "Loading channels...", findViewById(R.id.activity_login));
             } else {
                 spinner.setVisibility(View.GONE);
                 Utils.getInstance().Snack(getApplicationContext(), "Account not found.", findViewById(R.id.activity_login));
