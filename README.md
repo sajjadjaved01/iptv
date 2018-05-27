@@ -10,3 +10,10 @@ Reading M3U / M3U8 file & displaying Channels.
 * Future Updates
 - [ ] Exo Player & MxPlayer
 - [ ] Screen Cast
+
+***Screenshots***
+<p align='center'>
+    <img src="https://github.com/sajjadjaved01/iptv/blob/master/Screenshot_2018-05-27-11-28-56.png" height="450px"/>
+    <img src="https://github.com/sajjadjaved01/iptv/blob/master/Screenshot_2018-05-27-11-27-05.png" height="450px"/>
+    <img src="https://github.com/sajjadjaved01/iptv/blob/master/Screenshot_2018-05-27-11-28-09.png" height="450px"/>
+</p>
