@@ -5,7 +5,7 @@ Channel list is Obtained from List Provided.
 Reading M3U / M3U8 file & displaying Channels.
 
 
-![project maintained](https://img.shields.io/badge/Project-Maintained-green.svg)
+![project](https://img.shields.io/badge/Project-delayed-orange.svg)
 
 * Future Updates
 - [ ] Exo Player & MxPlayer
