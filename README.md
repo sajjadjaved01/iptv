@@ -4,11 +4,13 @@ Select an Channel to play.
 Channel list is Obtained from List Provided.
 Reading M3U / M3U8 file & displaying Channels.
 
+# Contributions | Contributors are welcome 👍😍
 
 ![project](https://img.shields.io/badge/Project-delayed-orange.svg)
 
 * Future Updates
-- [ ] Exo Player & MxPlayer
+- [x] Exo Player Included
+- [ ] MxPlayer Integration
 - [ ] Screen Cast
 
 ***Screenshots***
