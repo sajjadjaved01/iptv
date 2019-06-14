@@ -1,18 +1,11 @@
 package com.muparse;
 
-/*
-  Created by fedor on 28.11.2016.
- */
-
-
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,9 +16,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.amulyakhare.textdrawable.TextDrawable;
 import com.amulyakhare.textdrawable.util.ColorGenerator;
-import com.squareup.picasso.Picasso;
+import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,7 +34,7 @@ public class PlaylistAdapter extends RecyclerView.Adapter<PlaylistAdapter.ItemHo
     private TextDrawable textDrawable;
     private ColorGenerator generator = ColorGenerator.MATERIAL;
 
-    public PlaylistAdapter(Context c) {
+    PlaylistAdapter(Context c) {
         mContext = c;
         mInflater = LayoutInflater.from(mContext);
     }
@@ -81,14 +77,15 @@ public class PlaylistAdapter extends RecyclerView.Adapter<PlaylistAdapter.ItemHo
                 //mItem.addAll((ArrayList<M3UItem>) results.values);
                 notifyDataSetChanged();
             }
+
             @Override
             protected FilterResults performFiltering(CharSequence constraint) {
                 FilterResults results = new FilterResults();
-                if (!(constraint.length() == 0)){
+                if (!(constraint.length() == 0)) {
                     mItem.clear();
                     final String filtePatt = constraint.toString().toLowerCase().trim();
-                    for (M3UItem itm: mItem){
-                        if (itm.getItemName().toLowerCase().contains(filtePatt)){
+                    for (M3UItem itm : mItem) {
+                        if (itm.getItemName().toLowerCase().contains(filtePatt)) {
                             Toast.makeText(mContext, "Google", Toast.LENGTH_SHORT).show();
                             mItem.add(itm);
                         }
@@ -118,7 +115,7 @@ public class PlaylistAdapter extends RecyclerView.Adapter<PlaylistAdapter.ItemHo
 
         void update(final M3UItem item) {
             try {
-            name.setText(item.getItemName());
+                name.setText(item.getItemName());
                 int color = generator.getRandomColor();
                 if (item.getItemIcon().isEmpty()) {
                     textDrawable = TextDrawable.builder()
@@ -126,7 +123,7 @@ public class PlaylistAdapter extends RecyclerView.Adapter<PlaylistAdapter.ItemHo
                     cImg.setImageDrawable(textDrawable);
                 } else {
                     if (Utils.getInstance().isNetworkAvailable(mContext)) {
-                        Picasso.with(mContext).load(item.getItemIcon()).into(cImg);
+                        Glide.with(mContext).load(item.getItemIcon()).into(cImg);
                     } else {
                         textDrawable = TextDrawable.builder()
                                 .buildRoundRect(String.valueOf(item.getItemName().charAt(0)), color, 100);
@@ -146,12 +143,13 @@ public class PlaylistAdapter extends RecyclerView.Adapter<PlaylistAdapter.ItemHo
 //                } else { // isApplicationNotFound
 //                    playerNotFound(mContext,"iPtv","Player not found. Install MX Player.");
 //                }
-                Intent intent = new Intent(mContext, playerExo.class);
+                Intent intent = new Intent(mContext, PlayerExo.class);
                 intent.putExtra("Name", imm.getItemName());
                 intent.putExtra("Url", imm.getItemUrl());
                 Log.e("Google", imm.getItemUrl());
                 mContext.startActivity(intent);
-            } catch (Exception ignored) {}
+            } catch (Exception ignored) {
+            }
         }
 
         void playy(String urli, String channel) {
@@ -163,10 +161,11 @@ public class PlaylistAdapter extends RecyclerView.Adapter<PlaylistAdapter.ItemHo
                 intent.setPackage("com.mxtech.videoplayer.ad");
                 intent.putExtra("title", channel);
                 mContext.startActivity(intent);
-            } catch (Exception ignored) {}
+            } catch (Exception ignored) {
+            }
         }
 
-        void playerNotFound(Context context,String title,String message) {
+        void playerNotFound(Context context, String title, String message) {
             AlertDialog.Builder localBuilder = new AlertDialog.Builder(context);
             localBuilder.setTitle(title);
             localBuilder.setMessage(message);

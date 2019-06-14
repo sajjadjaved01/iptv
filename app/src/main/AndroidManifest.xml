@@ -34,7 +34,7 @@
             android:label="@string/about"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".playerExo"
+            android:name=".PlayerExo"
             android:screenOrientation="landscape"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
     </application>

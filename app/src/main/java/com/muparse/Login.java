@@ -1,14 +1,13 @@
 package com.muparse;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
-import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
@@ -16,6 +15,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
 import com.google.firebase.analytics.FirebaseAnalytics;
 
@@ -138,11 +140,12 @@ public class Login extends AppCompatActivity {
             mEmailView.setError(getString(R.string.error_field_required));
             focusView = mEmailView;
             cancel = true;
-        } else if (!isEmailValid(email)) {
+        }
+        /*else if (!isEmailValid(email)) {
             mEmailView.setError(getString(R.string.error_invalid_email));
             focusView = mEmailView;
             cancel = true;
-        }
+        }*/
         if (cancel) {
             // There was an error; don't attempt login and focus the first form field with an error.
             focusView.requestFocus();
@@ -152,7 +155,7 @@ public class Login extends AppCompatActivity {
     }
 
     private boolean isEmailValid(String email) {
-        return email.contains("");
+        return email.contains("@");
     }
 
     private boolean isPasswordValid(String password) {
@@ -171,6 +174,7 @@ public class Login extends AppCompatActivity {
         //if (!isAva){activateWIFI();}
     }
 
+    @SuppressLint("StaticFieldLeak")
     private class _checkNetworkAvailable extends AsyncTask<String, Void, Boolean> {
 
         @Override
@@ -218,6 +222,7 @@ public class Login extends AppCompatActivity {
         }
     }
 
+    @SuppressLint("StaticFieldLeak")
     private class DwnloadFileFromUrl extends AsyncTask<String, String, String> {
 
         @Override

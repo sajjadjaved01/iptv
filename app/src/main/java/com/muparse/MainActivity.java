@@ -7,12 +7,6 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.RequiresApi;
-import android.support.v4.view.MenuItemCompat;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.SearchView;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -21,6 +15,13 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
+import androidx.core.view.MenuItemCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -184,6 +185,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     }
 
     // Getting More Info about provided Line
+    @SuppressLint("StaticFieldLeak")
     class GetJson extends AsyncTask<Void, Void, Void> {
 
         @Override
