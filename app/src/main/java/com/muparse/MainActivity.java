@@ -76,9 +76,9 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     protected void onResume() {
         super.onResume();
         boolean isAccess = PreferencesManager.getBoolean(this, "isLogged", false);
-//        if (!isAccess) {
-//            startActivity(new Intent(MainActivity.this, Login.class));
-//        }
+        if (!isAccess) {
+            startActivity(new Intent(MainActivity.this, Login.class));
+        }
     }
 
     @Override

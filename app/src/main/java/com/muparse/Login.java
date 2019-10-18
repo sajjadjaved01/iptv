@@ -156,7 +156,7 @@ public class Login extends AppCompatActivity {
         super.onResume();
         boolean isAccess = PreferencesManager.getBoolean(this, "isLogged", false);
         boolean isAva = Utils.getInstance().isNetworkAvailable(Login.this);
-        if (!isAccess) {
+        if (isAccess) {
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(intent);
             finish();
