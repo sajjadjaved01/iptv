@@ -9,12 +9,10 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -35,8 +33,8 @@ import static com.muparse.R.id.password;
 public class Login extends AppCompatActivity {
 
     static final File DEFA = Environment.getExternalStorageDirectory();
-    public static final File dir = new File(DEFA.getPath() + "/Netuptv");
-    static final File filepath = new File(dir.getPath() + "/data.m3u");
+    private final File dir = new File(DEFA.getPath() + "/Netuptv");
+    public final File filepath = new File(dir.getPath() + "/data.m3u");
     private static Login instance = null;
     public final String urlLink = "Add your own link";
     public final String domain = "Add your Iptv server";  //http://portal.example.com:8001";
@@ -68,20 +66,12 @@ public class Login extends AppCompatActivity {
         final Button mEmailSignIn = findViewById(R.id.email_sign_in_button);
         firebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
-        mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
-                checkNet();
-                return true;
-            }
+        mPasswordView.setOnEditorActionListener((textView, id, keyEvent) -> {
+            checkNet();
+            return true;
         });
 
-        mEmailSignIn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                checkNet();
-            }
-        });
+        mEmailSignIn.setOnClickListener(view -> checkNet());
 
         Bundle bundle = new Bundle();
         bundle.putString(FirebaseAnalytics.Param.ITEM_ID, "LoginActivity");
@@ -166,7 +156,7 @@ public class Login extends AppCompatActivity {
         super.onResume();
         boolean isAccess = PreferencesManager.getBoolean(this, "isLogged", false);
         boolean isAva = Utils.getInstance().isNetworkAvailable(Login.this);
-        if (isAccess) {
+        if (!isAccess) {
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(intent);
             finish();

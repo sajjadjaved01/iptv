@@ -1,7 +1,6 @@
 package com.muparse;
 
 import android.annotation.SuppressLint;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
@@ -32,9 +31,6 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import static com.muparse.Login.filepath;
-
-
 public class MainActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
 
     final M3UParser parser = new M3UParser();
@@ -61,8 +57,8 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         mPlaylistList.setLayoutManager(layoutManager);
         mAdapter = new PlaylistAdapter(this);
         mPlaylistList.setAdapter(mAdapter);
-//        loader(filepath.getPath());
-        new _loadFile().execute(filepath.getPath()); // this will read direct channels from url
+        loader(Login.getInstance().filepath.getPath());
+//        new _loadFile().execute(filepath.getPath()); // this will read direct channels from url
         //new GetJson().execute(); // this is getting info about User, channels etc.
     }
 
@@ -80,9 +76,9 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     protected void onResume() {
         super.onResume();
         boolean isAccess = PreferencesManager.getBoolean(this, "isLogged", false);
-        if (!isAccess) {
-            startActivity(new Intent(MainActivity.this, Login.class));
-        }
+//        if (!isAccess) {
+//            startActivity(new Intent(MainActivity.this, Login.class));
+//        }
     }
 
     @Override
@@ -103,6 +99,10 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
                 //TODO here changes the search text)
                 return filter(newText);
             }
+        });
+        searchView.setOnCloseListener(() -> {
+            new _loadFile().execute(Login.getInstance().filepath.getPath());
+            return false;
         });
         return true;
     }
@@ -141,20 +141,13 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
 
     private void browser() {
         if (mBrowser == null) {
-            mBrowser = FileBrowser.createFileBrowser(this, new FileBrowser.OnFileSelectedListener() {
-
-                @Override
-                public void onFileSelected(String path) {
-                    if (mBrowser != null && mBrowser.isShowing()) {
-                        new _loadFile().execute(path);
-                        mBrowser.dismiss();
-                    }
+            mBrowser = FileBrowser.createFileBrowser(this, path -> {
+                if (mBrowser != null && mBrowser.isShowing()) {
+                    new _loadFile().execute(path);
+                    mBrowser.dismiss();
                 }
             });
-            mBrowser.setOnDismissListener(new DialogInterface.OnDismissListener() {
-                @Override
-                public void onDismiss(DialogInterface dialog) {
-                }
+            mBrowser.setOnDismissListener(dialog -> {
             });
         }
         mBrowser.show();
@@ -162,14 +155,12 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
 
     private boolean filter(final String newText) {
         if (mAdapter != null) {
-            if (newText.isEmpty()) {
-                new _loadFile().execute(filepath.getPath());
-            } else {
+            if (!newText.isEmpty()) {
                 mAdapter.getFilter().filter(newText);
             }
             return true;
         } else {
-            loader(filepath.getPath());
+            loader(Login.getInstance().filepath.getPath());
             return false;
         }
     }
