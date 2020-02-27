@@ -14,7 +14,6 @@ import android.util.Log
 import android.view.KeyEvent
 import android.view.View
 import android.widget.Button
-import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.TextView.OnEditorActionListener
@@ -29,14 +28,13 @@ import java.net.HttpURLConnection
 import java.net.URL
 
 class Login : AppCompatActivity() {
-    private val dir = File(DEFA.path + "/${getString(R.string.app_name)}")
+    private val dir = File(DEFA.path + "/NetupTV")
     val filepath = File(dir.path + "/data.m3u")
     @JvmField
     val urlLink = "Add your own link"
     val domain = "Add your Iptv server" //http://portal.example.com:8001";
     var firebaseAnalytics: FirebaseAnalytics? = null
     lateinit var editor: SharedPreferences.Editor
-    private var mPasswordView: EditText? = null
     private var spinner: ProgressBar? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,7 +54,7 @@ class Login : AppCompatActivity() {
         firebaseAnalytics!!.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle)
     }
 
-    fun checkNet() {
+    private fun checkNet() {
         if (this@Login.isNetworkAvailable()) {
             attemptLogin()
         } else {
@@ -83,15 +81,14 @@ class Login : AppCompatActivity() {
 
     private fun attemptLogin() { // Reset errors.
         email!!.error = null
-        mPasswordView!!.error = null
+        password!!.error = null
         // Store values at the time of the login attempt.
-        val password = mPasswordView!!.text.toString()
         var cancel = false
         var focusView: View? = null
         // Check for a valid password, if the user entered one.
-        if (TextUtils.isEmpty(password) && !isPasswordValid(password)) {
-            mPasswordView!!.error = getString(R.string.error_invalid_password)
-            focusView = mPasswordView
+        if (TextUtils.isEmpty(password.text.toString()) && !isPasswordValid(password.text.toString())) {
+            password!!.error = getString(R.string.error_invalid_password)
+            focusView = password
             cancel = true
         }
         // Check for a valid email address.
@@ -107,7 +104,7 @@ class Login : AppCompatActivity() {
         }*/if (cancel) { // There was an error; don't attempt login and focus the first form field with an error.
             focusView!!.requestFocus()
         } else {
-            CheckNetworkAvailable().execute(domain + "/get.php?username=" + email.text + "&password=" + mPasswordView!!.text + "&type=m3u&output=ts")
+            CheckNetworkAvailable().execute(domain + "/get.php?username=" + email.text + "&password=" + password!!.text + "&type=m3u&output=ts")
         }
     }
 
@@ -144,7 +141,7 @@ class Login : AppCompatActivity() {
                 editor.putString("id", email!!.text.toString())
                 editor.putBoolean("isLogged", true)
                 editor.apply()
-                DwnloadFileFromUrl().execute(domain + "/get.php?username=" + email!!.text + "&password=" + mPasswordView!!.text + "&type=m3u&output=ts")
+                DwnloadFileFromUrl().execute(domain + "/get.php?username=" + email!!.text + "&password=" + password!!.text + "&type=m3u&output=ts")
                 Utils.instance!!.Snack(this@Login, "Loading channels...", findViewById(id.activity_login))
             } else {
                 spinner!!.visibility = View.GONE

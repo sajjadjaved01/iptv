@@ -17,7 +17,6 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
-import androidx.core.view.MenuItemCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import org.json.JSONObject
@@ -49,12 +48,12 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
         mPlaylistList.layoutManager = layoutManager
         mAdapter = PlaylistAdapter(this)
         mPlaylistList.adapter = mAdapter
-        loader(Login.instance!!.filepath.path)
+        loader(Utils.instance!!.filepath.path)
         //        new _loadFile().execute(filepath.getPath()); // this will read direct channels from url
 //new GetJson().execute(); // this is getting info about User, channels etc.
     }
 
-    fun loader(name: String?) {
+    private fun loader(name: String?) {
         try { //new FileInputStream (new File(name)
             `is` = assets.open("data.db") // if u r trying to open file from asstes InputStream is = getassets.open(); InputStream
             val playlist = parser.parseFile(`is`)
@@ -76,7 +75,7 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
         val inflater = menuInflater
         inflater.inflate(R.menu.main_menu, menu)
         val search = menu.findItem(R.id.app_bar_search)
-        val searchView = MenuItemCompat.getActionView(search) as SearchView
+        val searchView = search.actionView as SearchView
         searchView.queryHint = "Search channel name"
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String): Boolean {
@@ -164,8 +163,7 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
         }
 
         override fun doInBackground(vararg params: Void?): Void? {
-            val hh = HttpHandler()
-            val jsonStr = hh.makeServiceCall(url)
+            val jsonStr = HttpHandler().makeServiceCall(url)
             Log.i(TAG, "Response from url: $jsonStr")
             if (jsonStr != null) {
                 try {

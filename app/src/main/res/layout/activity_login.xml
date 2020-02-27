@@ -28,7 +28,7 @@
         android:layout_below="@+id/imageView"
         android:orientation="horizontal">
 
-        <EditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -41,13 +41,14 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/txtInput"
         android:layout_width="match_parent"
+        android:layout_marginTop="16dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/txtInput2"
         android:orientation="horizontal"
         app:passwordToggleEnabled="true">
 
-        <EditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -64,7 +65,6 @@
         android:layout_below="@+id/txtInput"
         android:layout_marginTop="50dp"
         android:text="@string/action_sign_in"
-        android:theme="@style/MyButton"
         android:textSize="20sp"
         android:textStyle="bold" />
 

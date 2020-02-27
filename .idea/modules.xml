@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/iptv.iml" filepath="$PROJECT_DIR$/iptv.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="iptv/app" />
+      <module fileurl="file://$PROJECT_DIR$/iptv.iml" filepath="$PROJECT_DIR$/iptv.iml" group="iptv" />
     </modules>
   </component>
 </project>
