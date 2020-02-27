@@ -10,8 +10,7 @@ Reading M3U / M3U8 file & displaying Channels.
 
 * Future Updates
 - [x] Exo Player Included
-- [ ] MxPlayer Integration
-- [ ] Screen Cast
+- [ ] EPG
 
 ***Screenshots***
 <p align='center'>
