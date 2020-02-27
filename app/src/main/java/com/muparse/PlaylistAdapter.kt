@@ -14,7 +14,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.amulyakhare.textdrawable.TextDrawable
 import com.amulyakhare.textdrawable.util.ColorGenerator
 import com.bumptech.glide.Glide
-import java.util.*
 
 class PlaylistAdapter internal constructor(private val mContext: Context) : RecyclerView.Adapter<PlaylistAdapter.ItemHolder>(), Filterable {
     private lateinit var mItem: MutableList<M3UItem>
@@ -47,7 +46,7 @@ class PlaylistAdapter internal constructor(private val mContext: Context) : Recy
                         mContext.startActivity(intent)
                     }
                     1 -> {
-                        val isApp = Utils.getInstance().isPackageInstalled(pm)
+                        val isApp = Utils.instance!!.isPackageInstalled(pm)
                         if (isApp) {
                             holder.playy(itemUrl!!, itemName!!)
                         } else { // isApplicationNotFound
@@ -64,7 +63,7 @@ class PlaylistAdapter internal constructor(private val mContext: Context) : Recy
         return mItem.size
     }
 
-    fun update(_list: MutableList<M3UItem>) {
+    fun update(_list: ArrayList<M3UItem>) {
         this.mItem = _list
         notifyDataSetChanged()
     }
@@ -114,7 +113,7 @@ class PlaylistAdapter internal constructor(private val mContext: Context) : Recy
                             .buildRoundRect(item.itemName!![0].toString(), color, 100)
                     cImg.setImageDrawable(textDrawable)
                 } else {
-                    if (Utils.getInstance().isNetworkAvailable(mContext)) {
+                    if (Utils.instance!!.isNetworkAvailable(mContext)) {
                         Glide.with(mContext).load(item.itemIcon).into(cImg)
                     } else {
                         textDrawable = TextDrawable.builder()
@@ -130,11 +129,12 @@ class PlaylistAdapter internal constructor(private val mContext: Context) : Recy
         internal fun playy(urli: String, channel: String) {
             try {
                 val videoUri = Uri.parse(urli)
-                val intent = Intent(Intent.ACTION_VIEW)
-                intent.setDataAndType(videoUri, "application/x-mpegURL")
-                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
-                intent.setPackage("com.mxtech.videoplayer.ad")
-                intent.putExtra("title", channel)
+                val intent = Intent(Intent.ACTION_VIEW).apply {
+                    setDataAndType(videoUri, "application/x-mpegURL")
+                    flags = Intent.FLAG_ACTIVITY_NEW_TASK
+                    setPackage("com.mxtech.videoplayer.ad")
+                    putExtra("title", channel)
+                }
                 mContext.startActivity(intent)
             } catch (ignored: Exception) {
             }

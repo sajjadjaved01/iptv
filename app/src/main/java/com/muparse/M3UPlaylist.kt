@@ -6,7 +6,7 @@ internal class M3UPlaylist {
 
     var playlistParams: String? = null
 
-    var playlistItems: List<M3UItem>? = null
+    var playlistItems: ArrayList<M3UItem>? = null
 
     fun getSingleParameter(paramName: String): String {
         val paramsArray = this.playlistParams!!.split(" ".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()

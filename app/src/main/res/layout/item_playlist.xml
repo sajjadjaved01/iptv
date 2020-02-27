@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/relLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -8,23 +10,35 @@
     <ImageView
         android:id="@+id/cimg"
         android:layout_width="50sp"
-        android:layout_height="50sp"
-        android:layout_marginStart="10sp"
-        android:contentDescription="@string/browse" />
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:contentDescription="@string/browse"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/item_name"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="16sp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="4dp"
+        android:layout_toEndOf="@+id/cimg"
         android:lines="1"
-        android:paddingStart="60sp"
+        android:paddingStart="10sp"
+        android:paddingEnd="0dp"
         android:text="Name"
+        android:textAlignment="textStart"
         android:textColor="#000"
-        android:textSize="22sp" />
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cimg"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <!--<TextView-->
     <!--android:id="@+id/item_url"-->
@@ -41,6 +55,9 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="2dp"
-        android:layout_below="@+id/item_name" />
+        android:layout_below="@+id/item_name"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/cimg"
+        tools:layout_editor_absoluteX="0dp" />
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,7 +5,6 @@ import android.util.Log;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
@@ -17,7 +16,7 @@ public class M3UParser {
     private static final String EXT_LOGO = "tvg-logo";
     private static final String EXT_URL = "http://";
 
-    public String convertStreamToString(InputStream is) {
+    private String convertStreamToString(InputStream is) {
         try {
             return new Scanner(is).useDelimiter("\\A").next();
         } catch (NoSuchElementException e) {
@@ -27,11 +26,10 @@ public class M3UParser {
 
     public M3UPlaylist parseFile(InputStream inputStream) throws FileNotFoundException {
         M3UPlaylist m3UPlaylist = new M3UPlaylist();
-        List<M3UItem> playlistItems = new ArrayList<>();
+        ArrayList<M3UItem> playlistItems = new ArrayList<>();
         String stream = convertStreamToString(inputStream);
-        String linesArray[] = stream.split(EXT_INF);
-        for (int i = 0; i < linesArray.length; i++) {
-            String currLine = linesArray[i];
+        String[] linesArray = stream.split(EXT_INF);
+        for (String currLine : linesArray) {
             if (currLine.contains(EXT_M3U)) {
                 //header of file
                 if (currLine.contains(EXT_PLAYLIST_NAME)) {

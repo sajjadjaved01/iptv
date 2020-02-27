@@ -1,11 +1,7 @@
 <resources>
     <string name="app_name">NetupTv</string>
     <string name="netuptv_for_online_streaming">NetupTv Live Streaming App</string>
-    <string name="prompt_email">User Name</string>
-    <string name="prompt_password">Password</string>
-    <string name="action_sign_in_short">Sign In</string>
     <string name="action_sign_in">Sign In</string>
-    <string name="error_invalid_email">This email address is invalid</string>
     <string name="error_invalid_password">This password is too short</string>
     <string name="error_field_required">Required</string>
     <string name="about">About</string>
@@ -15,9 +11,6 @@
     <string name="logout">Logout</string>
     <string name="iptv">IPTV</string>
 
-    <string name="title_activity_exo_player">Player</string>
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="info">Info</string>
 
 </resources>
