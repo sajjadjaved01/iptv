@@ -9,7 +9,7 @@
 
     <ImageView
         android:id="@+id/cimg"
-        android:layout_width="50sp"
+        android:layout_width="40sp"
         android:layout_height="40dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="4dp"

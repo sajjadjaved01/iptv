@@ -3,9 +3,9 @@ package com.muparse
 import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import android.view.View
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import java.text.SimpleDateFormat
 import java.util.zip.ZipFile
 
@@ -24,7 +24,7 @@ class About : AppCompatActivity() {
         val txtVer = findViewById<View>(R.id.txtver) as TextView
         txtVer.text = "                                  Version: " + vercode + "\n" +
                 "LoggedIn As: " + prefs.getString("id", null) + "\n" +
-                "DevelopedBy: Sj&SUSLink☺" + "\n" +
+                "DevelopedBy: SajjadJaved ☺" + "\n" +
                 "LastBuild: " + last
     }
 

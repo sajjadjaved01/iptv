@@ -24,10 +24,11 @@
         android:id="@+id/txtver"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_alignEnd="@+id/txtmain"
         android:layout_below="@+id/txtmain"
+        android:layout_alignEnd="@+id/txtmain"
+        android:layout_centerHorizontal="true"
         android:text="Version"
+        android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
 </RelativeLayout>

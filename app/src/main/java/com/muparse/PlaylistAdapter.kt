@@ -8,16 +8,22 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.*
+import android.widget.Filter
+import android.widget.Filterable
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.amulyakhare.textdrawable.TextDrawable
 import com.amulyakhare.textdrawable.util.ColorGenerator
 import com.bumptech.glide.Glide
+import java.util.*
+import kotlin.collections.ArrayList
 
 class PlaylistAdapter internal constructor(private val mContext: Context) : RecyclerView.Adapter<PlaylistAdapter.ItemHolder>(), Filterable {
-    private lateinit var mItem: MutableList<M3UItem>
-    private var filteredList: MutableList<M3UItem> = ArrayList()
+    private lateinit var mItem: ArrayList<M3UItem>
+    private var filteredList: ArrayList<M3UItem> = ArrayList()
     private var textDrawable: TextDrawable? = null
     private val generator = ColorGenerator.MATERIAL
     private val playerId = 0
@@ -64,27 +70,26 @@ class PlaylistAdapter internal constructor(private val mContext: Context) : Recy
     }
 
     fun update(_list: ArrayList<M3UItem>) {
-        this.mItem = _list
+        mItem = _list
         notifyDataSetChanged()
     }
 
     override fun getFilter(): Filter {
-        return object : Filter() { //TODO search it on github
+        return object : Filter() {
             override fun publishResults(constraint: CharSequence, results: FilterResults) {
-//                mItem.clear()
-                //mItem.addAll((ArrayList<M3UItem>) results.values);
+                mItem.clear()
+                mItem.addAll(results.values as ArrayList<M3UItem>)
                 notifyDataSetChanged()
             }
 
             override fun performFiltering(constraint: CharSequence): FilterResults {
-                filteredList = mItem
+//                filteredList = mItem
+                filteredList.clear()
                 return FilterResults().apply {
                     if (constraint.isNotEmpty()) {
-                        filteredList.clear()
-                        val filtePatt = constraint.toString().toLowerCase().trim { it <= ' ' }
+                        val filtePatt = constraint.toString().toLowerCase(Locale.ROOT)
                         for (itm in mItem) {
-                            if (itm.itemName!!.toLowerCase().contains(filtePatt)) {
-                                Toast.makeText(mContext, "Google", Toast.LENGTH_SHORT).show()
+                            if (itm.itemName!!.toLowerCase(Locale.ROOT).contains(filtePatt)) {
                                 filteredList.add(itm)
                             }
 //                            mItem.add(itm)
@@ -102,7 +107,7 @@ class PlaylistAdapter internal constructor(private val mContext: Context) : Recy
 
         internal var name: TextView = view.findViewById(R.id.item_name)
         private var cImg: ImageView = view.findViewById(R.id.cimg)
-        var rel: RelativeLayout = view.findViewById(R.id.relLayout)
+        var rel: ConstraintLayout = view.findViewById(R.id.relLayout)
 
         internal fun update(item: M3UItem) {
             try {

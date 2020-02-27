@@ -104,7 +104,7 @@ class Login : AppCompatActivity() {
         }*/if (cancel) { // There was an error; don't attempt login and focus the first form field with an error.
             focusView!!.requestFocus()
         } else {
-            CheckNetworkAvailable().execute(domain + "/get.php?username=" + email.text + "&password=" + password!!.text + "&type=m3u&output=ts")
+            CheckNetworkAvailable().execute("$domain/get.php?username=" + email.text + "&password=" + password!!.text + "&type=m3u&output=ts")
         }
     }
 

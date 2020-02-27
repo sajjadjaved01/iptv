@@ -19,6 +19,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.snackbar.Snackbar
 import org.json.JSONObject
 import java.io.File
 import java.io.FileInputStream
@@ -48,19 +49,20 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
         mPlaylistList.layoutManager = layoutManager
         mAdapter = PlaylistAdapter(this)
         mPlaylistList.adapter = mAdapter
-        loader(Utils.instance!!.filepath.path)
+        loader()
         //        new _loadFile().execute(filepath.getPath()); // this will read direct channels from url
 //new GetJson().execute(); // this is getting info about User, channels etc.
     }
 
-    private fun loader(name: String?) {
-        try { //new FileInputStream (new File(name)
-            `is` = assets.open("data.db") // if u r trying to open file from asstes InputStream is = getassets.open(); InputStream
-            val playlist = parser.parseFile(`is`)
-            mAdapter!!.update(playlist.playlistItems!!)
+    private fun loader(name: String? = Utils.instance!!.filepath.path) {
+        `is` = try { //new FileInputStream (new File(name)
+            FileInputStream(File(name))
         } catch (e: Exception) {
-            Log.d("Google", "" + e.toString())
+            Toast.makeText(applicationContext, "Unable to fetch data. Showing demo data", Toast.LENGTH_LONG).show()
+            assets.open("data.db") // if u r trying to open file from asstes InputStream is = getassets.open(); InputStream
         }
+        val playlist = parser.parseFile(`is`)
+        mAdapter!!.update(playlist.playlistItems!!)
     }
 
     override fun onResume() {
@@ -82,12 +84,15 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
                 return filter(query)
             }
 
-            override fun onQueryTextChange(newText: String): Boolean { //TODO here changes the search text)
+            override fun onQueryTextChange(newText: String): Boolean {
                 return filter(newText)
             }
         })
         searchView.setOnCloseListener {
-            LoadFile().execute(Login.instance!!.filepath.path)
+            val goo = LoadFile().execute(Utils.instance!!.filepath.path)
+            if (goo.get() == false) {
+                loader()
+            }
             false
         }
         return true
@@ -106,7 +111,7 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
                 finish()
             }
             R.id.moreInfo -> GetJson().execute()
-            R.id.browse -> browser()
+            R.id.browse -> Snackbar.make(mPlaylistList, "Feature Deprecated", Snackbar.LENGTH_LONG).show() //browser()
             R.id.about -> {
                 val abt = Intent(this@MainActivity, About::class.java)
                 startActivity(abt)
@@ -119,15 +124,13 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
     }
 
     private fun browser() {
-        if (mBrowser == null) {
-            mBrowser = FileBrowser.createFileBrowser(this) { path: String? ->
-                if (mBrowser != null && mBrowser.isShowing) {
-                    LoadFile().execute(path)
-                    mBrowser.dismiss()
-                }
+        mBrowser = FileBrowser.createFileBrowser(this) { path: String? ->
+            if (mBrowser.isShowing) {
+                LoadFile().execute(path)
+                mBrowser.dismiss()
             }
-            mBrowser.setOnDismissListener { dialog: DialogInterface? -> }
         }
+        mBrowser.setOnDismissListener { dialog: DialogInterface? -> }
         mBrowser.show()
     }
 
@@ -138,7 +141,7 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
             }
             true
         } else {
-            loader(Utils.instance!!.filepath.path)
+            loader()
             false
         }
     }
@@ -157,6 +160,10 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
 
         override fun onPostExecute(aVoid: Void?) {
             super.onPostExecute(aVoid)
+            if (contactList.size == 0) {
+                Snackbar.make(mPlaylistList, "Currently No info Available", Snackbar.LENGTH_LONG).show()
+                return
+            }
             val ff = contactList[1].toString()
             Log.e(TAG, contactList[1].toString())
             Toast.makeText(applicationContext, ff, Toast.LENGTH_LONG).show()
@@ -222,7 +229,7 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
     }
 
     @SuppressLint("StaticFieldLeak")
-    internal inner class LoadFile : AsyncTask<String?, Void?, Boolean>() {
+    inner class LoadFile : AsyncTask<String?, Void?, Boolean>() {
         override fun onPreExecute() {
             super.onPreExecute()
             spinner!!.visibility = View.VISIBLE

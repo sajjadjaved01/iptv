@@ -25,7 +25,7 @@
             android:id="@+id/playlist_recycler"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:paddingTop="10dp"
+            android:paddingTop="4dp"
             android:scrollbarSize="50dp"
             android:scrollbarStyle="insideOverlay" />
 
