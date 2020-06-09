@@ -40,8 +40,8 @@ class Utils {
         val localBuilder = AlertDialog.Builder(context)
         localBuilder.setTitle(title)
         localBuilder.setMessage(msg)
-        localBuilder.setPositiveButton("Enable") { paramAnonymousDialogInterface, paramAnonymousInt -> context.startActivity(Intent(Settings.ACTION_WIFI_SETTINGS)) }
-        localBuilder.setNegativeButton("Continue") { paramAnonymousDialogInterface, paramAnonymousInt -> }
+        localBuilder.setPositiveButton("Enable") { _, paramAnonymousInt -> context.startActivity(Intent(Settings.ACTION_WIFI_SETTINGS)) }
+        localBuilder.setNegativeButton("Continue") { _, paramAnonymousInt -> }
         localBuilder.setCancelable(false)
         localBuilder.create().show()
     }

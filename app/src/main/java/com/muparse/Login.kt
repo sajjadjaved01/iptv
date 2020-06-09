@@ -153,13 +153,15 @@ class Login : AppCompatActivity() {
             return try {
                 val myUrl = URL(params[0]) //Arrays.toString(params)
                 val con = myUrl.openConnection() as HttpURLConnection
-                con.instanceFollowRedirects = true
-                con.connectTimeout = 2000
-                con.readTimeout = 2000
-                con.requestMethod = "POST"
-                con.doOutput = true
-                con.doInput = true
-                con.connect()
+                con.apply {
+                    instanceFollowRedirects = true
+                    connectTimeout = 2000
+                    readTimeout = 2000
+                    requestMethod = "POST"
+                    doOutput = true
+                    doInput = true
+                    connect()
+                }
                 val check = con.responseCode == HttpURLConnection.HTTP_OK
                 Log.e("Google", check.toString())
                 check
