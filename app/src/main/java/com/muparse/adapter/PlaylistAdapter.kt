@@ -1,4 +1,4 @@
-package com.muparse
+package com.muparse.adapter
 
 import android.content.ActivityNotFoundException
 import android.content.Context
@@ -18,6 +18,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.amulyakhare.textdrawable.TextDrawable
 import com.amulyakhare.textdrawable.util.ColorGenerator
 import com.bumptech.glide.Glide
+import com.muparse.R
+import com.muparse.Utils
+import com.muparse.activities.PlayerExo
+import com.muparse.models.M3UItem
 import java.util.*
 import kotlin.collections.ArrayList
 

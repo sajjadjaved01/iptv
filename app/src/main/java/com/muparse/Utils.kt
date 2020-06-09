@@ -15,6 +15,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.google.android.material.snackbar.Snackbar
+import com.muparse.activities.Login
 import java.io.File
 
 /**
@@ -37,13 +38,14 @@ class Utils {
     }
 
     fun activateWIFI(context: Context, title: String?, msg: String?) {
-        val localBuilder = AlertDialog.Builder(context)
-        localBuilder.setTitle(title)
-        localBuilder.setMessage(msg)
-        localBuilder.setPositiveButton("Enable") { _, paramAnonymousInt -> context.startActivity(Intent(Settings.ACTION_WIFI_SETTINGS)) }
-        localBuilder.setNegativeButton("Continue") { _, paramAnonymousInt -> }
-        localBuilder.setCancelable(false)
-        localBuilder.create().show()
+        AlertDialog.Builder(context).apply {
+            setTitle(title)
+            setMessage(msg)
+            setPositiveButton("Enable") { _, paramAnonymousInt -> context.startActivity(Intent(Settings.ACTION_WIFI_SETTINGS)) }
+            setNegativeButton("Continue") { _, paramAnonymousInt -> }
+            setCancelable(false)
+            create().show()
+        }
     }
 
     fun Snack(ctx: Context, text: String?, view: View?) {

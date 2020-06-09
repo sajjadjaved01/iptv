@@ -1,4 +1,4 @@
-package com.muparse
+package com.muparse.activities
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -16,11 +16,13 @@ import android.view.View
 import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.TextView
-import android.widget.TextView.OnEditorActionListener
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import com.google.firebase.analytics.FirebaseAnalytics
+import com.muparse.PreferencesManager
+import com.muparse.R
 import com.muparse.R.id
+import com.muparse.Utils
 import com.muparse.Utils.Companion.isNetworkAvailable
 import kotlinx.android.synthetic.main.activity_login.*
 import java.io.*
@@ -44,10 +46,10 @@ class Login : AppCompatActivity() {
         spinner = findViewById(id.login_progress)
         val mEmailSignIn = findViewById<Button>(id.email_sign_in_button)
         firebaseAnalytics = FirebaseAnalytics.getInstance(this)
-        password.setOnEditorActionListener(OnEditorActionListener { textView: TextView?, id: Int, keyEvent: KeyEvent? ->
+        password.setOnEditorActionListener { textView: TextView?, id: Int, keyEvent: KeyEvent? ->
             checkNet()
             true
-        })
+        }
         mEmailSignIn.setOnClickListener { view: View? -> checkNet() }
         val bundle = Bundle()
         bundle.putString(FirebaseAnalytics.Param.ITEM_ID, "LoginActivity")
@@ -137,10 +139,12 @@ class Login : AppCompatActivity() {
         override fun onPostExecute(result: Boolean) {
             if (result) {
                 editor = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE).edit()
-                editor.putString("name", "admin")
-                editor.putString("id", email!!.text.toString())
-                editor.putBoolean("isLogged", true)
-                editor.apply()
+                editor.apply {
+                    putString("name", "admin")
+                    putString("id", email!!.text.toString())
+                    putBoolean("isLogged", true)
+                    apply()
+                }
                 DwnloadFileFromUrl().execute(domain + "/get.php?username=" + email!!.text + "&password=" + password!!.text + "&type=m3u&output=ts")
                 Utils.instance!!.Snack(this@Login, "Loading channels...", findViewById(id.activity_login))
             } else {

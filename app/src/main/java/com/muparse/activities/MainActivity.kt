@@ -1,4 +1,4 @@
-package com.muparse
+package com.muparse.activities
 
 import android.annotation.SuppressLint
 import android.app.AlertDialog
@@ -20,6 +20,9 @@ import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
+import com.muparse.*
+import com.muparse.adapter.PlaylistAdapter
+import com.muparse.models.M3UParser
 import org.json.JSONObject
 import java.io.File
 import java.io.FileInputStream

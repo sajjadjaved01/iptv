@@ -1,4 +1,4 @@
-package com.muparse
+package com.muparse.models
 
 class M3UItem {
 

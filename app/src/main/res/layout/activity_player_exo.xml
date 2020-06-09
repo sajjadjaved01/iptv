@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:keepScreenOn="true"
-    tools:context="com.muparse.PlayerExo">
+    tools:context="com.muparse.activities.PlayerExo">
 
     <com.devbrackets.android.exomedia.ui.widget.VideoView
         android:id="@+id/video_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="visible"
-        app:useDefaultControls="true"/>
+        app:useDefaultControls="true" />
 
 </LinearLayout>

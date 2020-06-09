@@ -1,4 +1,4 @@
-package com.muparse
+package com.muparse.activities
 
 import android.net.Uri
 import android.os.Bundle
@@ -7,6 +7,7 @@ import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 
 import com.devbrackets.android.exomedia.ui.widget.VideoView
+import com.muparse.R
 
 class PlayerExo : AppCompatActivity(), com.devbrackets.android.exomedia.listener.OnPreparedListener {
 

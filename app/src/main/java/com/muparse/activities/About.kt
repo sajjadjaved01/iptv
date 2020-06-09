@@ -1,4 +1,4 @@
-package com.muparse
+package com.muparse.activities
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.muparse.BuildConfig
+import com.muparse.R
 import java.text.SimpleDateFormat
 import java.util.zip.ZipFile
 
