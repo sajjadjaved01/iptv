@@ -6,14 +6,14 @@ apply plugin: 'com.google.gms.google-services'
 
 
 android {
-    signingConfigs {
-        config {
-            keyPassword '03215410'
-            storeFile file('C:/Users/SajjadJaved/google1.jks')
-            storePassword '03215410'
-            keyAlias 'key0'
-        }
-    }
+  //  signingConfigs {
+  //      config {
+ //           keyPassword '03215410'
+ //           storeFile file('C:/Users/SajjadJaved/google1.jks')
+ //           storePassword '03215410'
+ //           keyAlias 'key0'
+ //       }
+ //   }
     compileSdkVersion 29
     defaultConfig {
         applicationId "com.muparse"
