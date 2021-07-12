@@ -52,7 +52,7 @@ class PlaylistAdapter internal constructor(private val mContext: Context) : Recy
                         val intent = Intent(mContext, PlayerExo::class.java)
                         intent.putExtra("Name", itemName)
                         intent.putExtra("Url", itemUrl)
-                        Log.e("Google", itemUrl)
+                        Log.e("Google", itemUrl!!)
                         mContext.startActivity(intent)
                     }
                     1 -> {

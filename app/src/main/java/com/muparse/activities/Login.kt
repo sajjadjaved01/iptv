@@ -13,7 +13,6 @@ import android.text.TextUtils
 import android.util.Log
 import android.view.KeyEvent
 import android.view.View
-import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -23,6 +22,8 @@ import com.muparse.PreferencesManager
 import com.muparse.R
 import com.muparse.R.id
 import com.muparse.Utils
+import com.muparse.Utils.Companion.isNetworkAvailable
+import com.muparse.databinding.ActivityLoginBinding
 import kotlinx.android.synthetic.main.activity_login.*
 import java.io.*
 import java.net.HttpURLConnection
@@ -31,15 +32,18 @@ import java.net.URL
 class Login : AppCompatActivity() {
     private val dir = File(DEFA.path + "/NetupTV")
     val filepath = File(dir.path + "/data.m3u")
+
     @JvmField
     val urlLink = "Add your own link"
     val domain = "Add your Iptv server" //http://portal.example.com:8001";
     var firebaseAnalytics: FirebaseAnalytics? = null
     lateinit var editor: SharedPreferences.Editor
     private var spinner: ProgressBar? = null
+    lateinit var loginBinding: ActivityLoginBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+        loginBinding = ActivityLoginBinding.inflate(layoutInflater)
         window.setBackgroundDrawable(null)
         ActivityCompat.requestPermissions(
             this,
@@ -47,13 +51,13 @@ class Login : AppCompatActivity() {
             1
         )
         spinner = findViewById(id.login_progress)
-        val mEmailSignIn = findViewById<Button>(id.email_sign_in_button)
+
         firebaseAnalytics = FirebaseAnalytics.getInstance(this)
         password.setOnEditorActionListener { textView: TextView?, id: Int, keyEvent: KeyEvent? ->
             checkNet()
             true
         }
-        mEmailSignIn.setOnClickListener { view: View? -> checkNet() }
+        loginBinding.emailSignInButton.setOnClickListener { view: View? -> checkNet() }
         val bundle = Bundle()
         bundle.putString(FirebaseAnalytics.Param.ITEM_ID, "LoginActivity")
         firebaseAnalytics!!.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle)
@@ -91,7 +95,7 @@ class Login : AppCompatActivity() {
                         1
                     )
                 }
-                return
+                super.onRequestPermissionsResult(requestCode, permissions, grantResults)
             }
         }
     }
@@ -234,6 +238,7 @@ class Login : AppCompatActivity() {
 
     companion object {
         val DEFA = Environment.getExternalStorageDirectory()
+
         @JvmStatic
         var instance: Login? = null
             get() {
