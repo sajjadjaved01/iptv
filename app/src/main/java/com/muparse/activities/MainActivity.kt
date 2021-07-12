@@ -58,18 +58,18 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
     }
 
     private fun loader(name: String? = Utils.instance!!.filepath.path) {
-//        `is` = try { //new FileInputStream (new File(name)
-//            FileInputStream(File(name))
-//        } catch (e: Exception) {
-//            Toast.makeText(applicationContext, "Unable to fetch data. Showing demo data", Toast.LENGTH_LONG).show()
-//            assets.open("data.db") // if u r trying to open file from assets InputStream is = getassets.open(); InputStream
-//        }
-        Thread(Runnable {
-            val playlist = parser.parseFile(Utils.tempChannels)
-            runOnUiThread {
-                mAdapter!!.update(playlist.playlistItems!!)
-            }
-        })
+        `is` = try { //new FileInputStream (new File(name)
+            FileInputStream(File(name))
+        } catch (e: Exception) {
+            Toast.makeText(
+                applicationContext,
+                "Unable to fetch data. Showing demo data",
+                Toast.LENGTH_LONG
+            ).show()
+            assets.open("data.db") // if u r trying to open file from asstes InputStream is = getassets.open(); InputStream
+        }
+        val playlist = parser.parseFile(`is`)
+        mAdapter!!.update(playlist.playlistItems!!)
     }
 
     override fun onResume() {

@@ -17,7 +17,6 @@ import androidx.appcompat.app.AlertDialog
 import com.google.android.material.snackbar.Snackbar
 import com.muparse.activities.Login
 import java.io.File
-import java.io.InputStream
 
 /**
  * Created by sajja on 3/4/2018.
@@ -79,8 +78,6 @@ class Utils {
                 return field
             }
             private set
-
-        lateinit var tempChannels: InputStream
 
         fun Context.isNetworkAvailable(): Boolean {
             val manager = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
