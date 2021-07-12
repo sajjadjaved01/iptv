@@ -1,7 +1,9 @@
 package com.muparse.activities
 
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
+import android.view.WindowInsets
 import android.view.WindowManager
 
 import androidx.appcompat.app.AppCompatActivity
@@ -16,8 +18,14 @@ class PlayerExo : AppCompatActivity(), com.devbrackets.android.exomedia.listener
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_player_exo)
 
-        window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            window.insetsController?.hide(WindowInsets.Type.statusBars())
+        } else {
+            window.setFlags(
+                WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN
+            )
+        }
         val bundle = intent.extras
 
         videoView = findViewById(R.id.video_view)

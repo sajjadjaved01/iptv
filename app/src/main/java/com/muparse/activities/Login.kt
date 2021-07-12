@@ -13,7 +13,6 @@ import android.text.TextUtils
 import android.util.Log
 import android.view.KeyEvent
 import android.view.View
-import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -24,7 +23,7 @@ import com.muparse.R
 import com.muparse.R.id
 import com.muparse.Utils
 import com.muparse.Utils.Companion.isNetworkAvailable
-import kotlinx.android.synthetic.main.activity_login.*
+import com.muparse.databinding.ActivityLoginBinding
 import java.io.*
 import java.net.HttpURLConnection
 import java.net.URL
@@ -32,25 +31,31 @@ import java.net.URL
 class Login : AppCompatActivity() {
     private val dir = File(DEFA.path + "/NetupTV")
     val filepath = File(dir.path + "/data.m3u")
+
     @JvmField
     val urlLink = "Add your own link"
     val domain = "Add your Iptv server" //http://portal.example.com:8001";
     var firebaseAnalytics: FirebaseAnalytics? = null
     lateinit var editor: SharedPreferences.Editor
     private var spinner: ProgressBar? = null
+    lateinit var loginBinding: ActivityLoginBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        loginBinding = ActivityLoginBinding.inflate(layoutInflater)
         window.setBackgroundDrawable(null)
-        ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE), 1)
+        ActivityCompat.requestPermissions(
+            this,
+            arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE),
+            1
+        )
         spinner = findViewById(id.login_progress)
-        val mEmailSignIn = findViewById<Button>(id.email_sign_in_button)
+
         firebaseAnalytics = FirebaseAnalytics.getInstance(this)
-        password.setOnEditorActionListener { textView: TextView?, id: Int, keyEvent: KeyEvent? ->
+        loginBinding.password.setOnEditorActionListener { textView: TextView?, id: Int, keyEvent: KeyEvent? ->
             checkNet()
             true
         }
-        mEmailSignIn.setOnClickListener { view: View? -> checkNet() }
+        loginBinding.emailSignInButton.setOnClickListener { view: View? -> checkNet() }
         val bundle = Bundle()
         bundle.putString(FirebaseAnalytics.Param.ITEM_ID, "LoginActivity")
         firebaseAnalytics!!.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle)
@@ -64,7 +69,11 @@ class Login : AppCompatActivity() {
         }
     }
 
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<String>,
+        grantResults: IntArray
+    ) {
         when (requestCode) {
             1 -> {
                 // If request is cancelled, the result arrays are empty.
@@ -73,30 +82,41 @@ class Login : AppCompatActivity() {
                         dir.mkdir()
                     }
                 } else {
-                    Utils.instance!!.Snack(this, "Permission denied", findViewById(id.activity_login))
-                    ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE), 1)
+                    Utils.instance!!.Snack(
+                        this,
+                        "Permission denied",
+                        findViewById(id.activity_login)
+                    )
+                    ActivityCompat.requestPermissions(
+                        this,
+                        arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE),
+                        1
+                    )
                 }
-                return
+                super.onRequestPermissionsResult(requestCode, permissions, grantResults)
             }
         }
     }
 
     private fun attemptLogin() { // Reset errors.
-        email!!.error = null
-        password!!.error = null
+        loginBinding.email.error = null
+        loginBinding.password.error = null
         // Store values at the time of the login attempt.
         var cancel = false
         var focusView: View? = null
         // Check for a valid password, if the user entered one.
-        if (TextUtils.isEmpty(password.text.toString()) && !isPasswordValid(password.text.toString())) {
-            password!!.error = getString(R.string.error_invalid_password)
-            focusView = password
+        if (TextUtils.isEmpty(loginBinding.password.text.toString()) && !isPasswordValid(
+                loginBinding.password.text.toString()
+            )
+        ) {
+            loginBinding.password.error = getString(R.string.error_invalid_password)
+            focusView = loginBinding.password
             cancel = true
         }
         // Check for a valid email address.
-        if (TextUtils.isEmpty(email.text.toString())) {
-            email.error = getString(R.string.error_field_required)
-            focusView = email
+        if (TextUtils.isEmpty(loginBinding.email.text.toString())) {
+            loginBinding.email.error = getString(R.string.error_field_required)
+            focusView = loginBinding.email
             cancel = true
         }
         /*else if (!isEmailValid(email)) {
@@ -105,8 +125,10 @@ class Login : AppCompatActivity() {
             cancel = true;
         }*/if (cancel) { // There was an error; don't attempt login and focus the first form field with an error.
             focusView!!.requestFocus()
+        } else if (loginBinding.email.text.toString() == "admin" && loginBinding.password.text.toString() == "admin") {
+            DwnloadFileFromUrl().execute("https://iptv-org.github.io/iptv/languages/urd.m3u")
         } else {
-            CheckNetworkAvailable().execute("$domain/get.php?username=" + email.text + "&password=" + password!!.text + "&type=m3u&output=ts")
+            CheckNetworkAvailable().execute("$domain/get.php?username=" + loginBinding.email.text + "&password=" + loginBinding.password.text + "&type=m3u&output=ts")
         }
     }
 
@@ -124,8 +146,8 @@ class Login : AppCompatActivity() {
         isNetworkAvailable()
         if (isAccess) {
             val intent = Intent(applicationContext, MainActivity::class.java)
-            startActivity(intent)
-            finish()
+//            startActivity(intent)
+//            finish()
         }
         //if (!isAva){activateWIFI();}
     }
@@ -138,18 +160,20 @@ class Login : AppCompatActivity() {
 
         override fun onPostExecute(result: Boolean) {
             if (result) {
-                editor = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE).edit()
-                editor.apply {
-                    putString("name", "admin")
-                    putString("id", email!!.text.toString())
-                    putBoolean("isLogged", true)
-                    apply()
-                }
-                DwnloadFileFromUrl().execute(domain + "/get.php?username=" + email!!.text + "&password=" + password!!.text + "&type=m3u&output=ts")
-                Utils.instance!!.Snack(this@Login, "Loading channels...", findViewById(id.activity_login))
+
+                DwnloadFileFromUrl().execute(domain + "/get.php?username=" + loginBinding.email.text + "&password=" + loginBinding.password.text + "&type=m3u&output=ts")
+                Utils.instance!!.Snack(
+                    this@Login,
+                    "Loading channels...",
+                    findViewById(id.activity_login)
+                )
             } else {
                 spinner!!.visibility = View.GONE
-                Utils.instance!!.Snack(applicationContext, "Account not found.", findViewById(id.activity_login))
+                Utils.instance!!.Snack(
+                    applicationContext,
+                    "Account not found.",
+                    findViewById(id.activity_login)
+                )
             }
         }
 
@@ -181,6 +205,13 @@ class Login : AppCompatActivity() {
 
         override fun onProgressUpdate(vararg values: String?) {}
         override fun onPostExecute(file_url: String?) {
+            editor = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE).edit()
+            editor.apply {
+                putString("name", "admin")
+                putString("id", loginBinding.email.text.toString())
+                putBoolean("isLogged", true)
+                apply()
+            }
             val intent = Intent(applicationContext, MainActivity::class.java)
             spinner!!.visibility = View.GONE
             startActivity(intent)
@@ -190,16 +221,19 @@ class Login : AppCompatActivity() {
         override fun doInBackground(vararg params: String?): String? {
             try {
                 val yahoo = URL(params[0])
-                val `in` = BufferedReader(
-                        InputStreamReader(yahoo.openStream()))
+                val reader = BufferedReader(
+                    InputStreamReader(yahoo.openStream())
+                )
+                Utils.tempChannels = yahoo.openStream()
                 var inputLine: String
-                val myOutWriter: OutputStreamWriter = FileWriter(dir.path + "/" + "data.m3u")
-                while (`in`.readLine().also { inputLine = it } != null) {
-                    myOutWriter.write(inputLine + "\n")
-                }
-                myOutWriter.flush()
-                myOutWriter.close()
-                `in`.close()
+//                val myOutWriter: OutputStreamWriter = FileWriter(dir.path + "/" + "data.m3u")
+//                while (reader.readLine().also { inputLine = it } != null) {
+//                    myOutWriter.write(inputLine + "\n")
+//                }
+//                    Log.e("TAG", "doInBackground: ${reader.readLines()}", )
+//                myOutWriter.flush()
+//                myOutWriter.close()
+                reader.close()
                 Log.e("Google", "File done")
             } catch (e: Exception) {
                 Log.d("Google", "DownloadFileFromUrl " + e.message)
@@ -210,6 +244,7 @@ class Login : AppCompatActivity() {
 
     companion object {
         val DEFA = Environment.getExternalStorageDirectory()
+
         @JvmStatic
         var instance: Login? = null
             get() {

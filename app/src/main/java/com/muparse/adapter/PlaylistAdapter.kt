@@ -26,7 +26,7 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 class PlaylistAdapter internal constructor(private val mContext: Context) : RecyclerView.Adapter<PlaylistAdapter.ItemHolder>(), Filterable {
-    private lateinit var mItem: ArrayList<M3UItem>
+    private var mItem: ArrayList<M3UItem> = arrayListOf()
     private var filteredList: ArrayList<M3UItem> = ArrayList()
     private var textDrawable: TextDrawable? = null
     private val generator = ColorGenerator.MATERIAL
@@ -52,7 +52,7 @@ class PlaylistAdapter internal constructor(private val mContext: Context) : Recy
                         val intent = Intent(mContext, PlayerExo::class.java)
                         intent.putExtra("Name", itemName)
                         intent.putExtra("Url", itemUrl)
-                        Log.e("Google", itemUrl)
+                        Log.e("Google", itemUrl.toString())
                         mContext.startActivity(intent)
                     }
                     1 -> {
