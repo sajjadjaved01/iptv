@@ -24,7 +24,6 @@ import com.muparse.R.id
 import com.muparse.Utils
 import com.muparse.Utils.Companion.isNetworkAvailable
 import com.muparse.databinding.ActivityLoginBinding
-import kotlinx.android.synthetic.main.activity_login.*
 import java.io.*
 import java.net.HttpURLConnection
 import java.net.URL
@@ -53,7 +52,7 @@ class Login : AppCompatActivity() {
         spinner = findViewById(id.login_progress)
 
         firebaseAnalytics = FirebaseAnalytics.getInstance(this)
-        password.setOnEditorActionListener { textView: TextView?, id: Int, keyEvent: KeyEvent? ->
+        loginBinding.password.setOnEditorActionListener { textView: TextView?, id: Int, keyEvent: KeyEvent? ->
             checkNet()
             true
         }
@@ -101,21 +100,24 @@ class Login : AppCompatActivity() {
     }
 
     private fun attemptLogin() { // Reset errors.
-        email!!.error = null
-        password!!.error = null
+        loginBinding.email!!.error = null
+        loginBinding.password!!.error = null
         // Store values at the time of the login attempt.
         var cancel = false
         var focusView: View? = null
         // Check for a valid password, if the user entered one.
-        if (TextUtils.isEmpty(password.text.toString()) && !isPasswordValid(password.text.toString())) {
-            password!!.error = getString(R.string.error_invalid_password)
-            focusView = password
+        if (TextUtils.isEmpty(loginBinding.password.text.toString()) && !isPasswordValid(
+                loginBinding.password.text.toString()
+            )
+        ) {
+            loginBinding.password!!.error = getString(R.string.error_invalid_password)
+            focusView = loginBinding.password
             cancel = true
         }
         // Check for a valid email address.
-        if (TextUtils.isEmpty(email.text.toString())) {
-            email.error = getString(R.string.error_field_required)
-            focusView = email
+        if (TextUtils.isEmpty(loginBinding.email.text.toString())) {
+            loginBinding.email.error = getString(R.string.error_field_required)
+            focusView = loginBinding.email
             cancel = true
         }
         /*else if (!isEmailValid(email)) {
@@ -125,7 +127,7 @@ class Login : AppCompatActivity() {
         }*/if (cancel) { // There was an error; don't attempt login and focus the first form field with an error.
             focusView!!.requestFocus()
         } else {
-            CheckNetworkAvailable().execute("$domain/get.php?username=" + email.text + "&password=" + password!!.text + "&type=m3u&output=ts")
+            CheckNetworkAvailable().execute("$domain/get.php?username=" + loginBinding.email.text + "&password=" + loginBinding.password.text + "&type=m3u&output=ts")
         }
     }
 
@@ -160,11 +162,11 @@ class Login : AppCompatActivity() {
                 editor = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE).edit()
                 editor.apply {
                     putString("name", "admin")
-                    putString("id", email!!.text.toString())
+                    putString("id", loginBinding.email.text.toString())
                     putBoolean("isLogged", true)
                     apply()
                 }
-                DwnloadFileFromUrl().execute(domain + "/get.php?username=" + email!!.text + "&password=" + password!!.text + "&type=m3u&output=ts")
+                DwnloadFileFromUrl().execute(domain + "/get.php?username=" + loginBinding.email.text + "&password=" + loginBinding.password.text + "&type=m3u&output=ts")
                 Utils.instance!!.Snack(
                     this@Login,
                     "Loading channels...",
